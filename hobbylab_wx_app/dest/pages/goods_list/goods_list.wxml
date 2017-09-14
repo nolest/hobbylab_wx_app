@@ -1,0 +1,117 @@
+<!--pages/goods_list/goods_list.wxml-->
+<view class="ds-flex flex-v pagemain">
+  <view class="ds-flex flex-v">
+    <view class="ds-flex pack-between banner" style="background:#def0f1">
+      <view class="ds-flex pack-center flex-v l">
+        <view class="l_1">{{ title_info.title }}</view>
+        <view class="l_2">{{ title_info.description }}</view>
+      </view>
+      <view class="ban_con">
+        <image src="{{ title_info.image }}" style="width:100px;height:100px;"></image>
+      </view>
+    </view>
+    <view class="ds-flex body_contain">
+      <scroll-view class="ds-flex flex-v sec_type" scroll-y="true" style="height: {{window.windowHeight-130}}px;">
+        <view class="ds-flex align-center sec_item {{ item.classify_id == cur_type?'cur':''}}" data-index="{{ index }}" wx:for="{{ list }}" bindtap="tap_class">
+          <view class="t">{{item.name}}</view>
+        </view>
+      </scroll-view>
+      <scroll-view class="ds-flex flex-v flex-1 thr_type" scroll-y="true" style="height: {{window.windowHeight-130}}px;" bindscrolltolower="index_bot">
+
+        <block wx:if="{{ list[cur_index].goods.length != 0 }}">
+          <view class="ds-flex flex-v">
+            <view wx:for="{{ banner }}" style="padding:15px 17px 0px 17px;font-size:0">
+              <image src="{{item.image}}" style="width:{{ window.windowWidth -(90+34) }}px;height:{{ 180/506*(window.windowWidth -(90+34))}}px;border-radius:4px"></image>
+            </view>
+          </view>
+          <view class="ds-flex align-center thr_title">
+            <view class="y"></view>
+            <view>{{ list[cur_index].name }}</view>
+          </view>
+          <view class="ds-flex innerItem" wx:for="{{ list[cur_index].goods }}" wx:for-index="idx" wx:for-item="innerItem" catchtap="go_to_details" data-goodsid="{{innerItem.goods_id}}">
+            <view class="img_con">
+              <image src="{{innerItem.image}}" style="width:140rpx;height:140rpx;border-radius:8rpx;"></image>
+            </view>
+            <view class="ds-flex flex-1 flex-v pack-between info_con">
+              <view class="info_title">{{innerItem.title}}</view>
+              <view class="info_num">{{innerItem.buy_num}}</view>
+              <view class="ds-flex pack-between info">
+                <view class="ds-flex align-center price">
+                  <view class="ds-flex ico">￥</view>
+                  <view class="">{{innerItem.price}} {{innerItem.unit?innerItem.unit:''}}</view>
+                </view>
+                <view class="ds-flex control {{ innerItem.stock_num?'':'fn-hide'}}" catchtap="nothing" wx:if="{{1 >= innerItem.standard.length}}">
+                  <view class="ds-flex flex-1 align-center controls des {{innerItem.g_num?'':'fn-hide'}}" catchtap="cart" data-con="des" data-gid="{{ innerItem.goods_id}}" data-cid="{{innerItem.classify_id}}" data-tid="{{innerItem.type_id}}" data-sid="{{innerItem.standard[0].standard_id}}"
+                    data-itemidx="{{idx}}">
+                    <image src="/image/goods_list/des_42x42.png" style="width:42rpx;height:42rpx;"></image>
+                  </view>
+                  <view class="ds-flex pack-center align-center nums {{innerItem.g_num?'':'fn-hide'}}" catchtap="nothing">{{innerItem.g_num}}</view>
+                  <view class="ds-flex flex-1 pack-end align-center controls plus" catchtap="cart" data-con="plus" data-gid="{{ innerItem.goods_id}}" data-cid="{{innerItem.classify_id}}" data-tid="{{innerItem.type_id}}" data-sid="{{innerItem.standard[0].standard_id}}"
+                    data-itemidx="{{idx}}">
+                    <image src="/image/goods_list/plus_42x42.png" style="width:42rpx;height:42rpx;"></image>
+                  </view>
+                </view>
+                <view class="ds-flex control pack-end align-center" wx:else catchtap="choose" data-gid="{{ innerItem.goods_id}}" data-cid="{{innerItem.classify_id}}" data-tid="{{innerItem.type_id}}" data-sid="{{innerItem.standard[0].standard_id}}" data-itemidx="{{idx}}">
+                  <view class="ds-flex pack-center align-center g {{innerItem.g_num?'':'fn-hide'}}">{{innerItem.g_num}}</view>
+                  <view class="ds-flex standard pack-center align-center">选规格</view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </block>
+        <block wx:else>
+          <view class="ds-flex flex-v pack-center align-center emt_con" style="height: {{window.windowHeight -182}}px;">
+            <image src="/image/goods_list_big/big_240x240.png" style="width:240rpx;height:240rpx"></image>
+            <view>爱好君正在搬运商品中</view>
+          </view>
+        </block>
+
+      </scroll-view>
+    </view>
+  </view>
+  <view class="ds-flex bar pack-between align-center">
+    <view class="ds-flex cart" bindtap="choosen">
+      <view class="ds-flex pack-center align-center cart_icon">
+        <image src="{{total_num?cart_cur:cart}}" style="width:60rpx;height:60rpx;"></image>
+      </view>
+      <view class="ds-flex pack-center align-center num {{total_num?'':'fn-hide'}}">{{ total_num }}</view>
+      <view class="ds-flex pack-center align-center {{total_num?'fn-hide':'e'}}"></view>
+      <view class="ds-flex align-center price fn-hide">￥50</view>
+    </view>
+    <view class="ds-flex pack-center align-center choosen {{total_num?'':'un'}}" bindtap="choosen">选好了</view>
+  </view>
+  <view class="ds-flex pack-center align-center standard_fade {{ standard_fade?'now':'' }}" style="height:{{ window.windowHeight }}px;width:{{ window.windowWidth }}px">
+    <view class="ds-flex flex-v pack-between mode_window" style="width:{{ window.windowWidth-60 }}px;">
+      <view class="ds-flex pack-between align-center top">
+        <view class="img_con" style="width:32rpx"></view>
+        <view class="ds-flex in_title">{{ list[cur_index].goods[standard_now.idx].title }}</view>
+        <view class="img_con" bindtap="hide_standard_fade">
+          <image src="/image/goods_list/fade_32x32.png" style="width:32rpx;height:32rpx"></image>
+        </view>
+      </view>
+      <view class="ds-flex flex-v middle">
+        <view class="ds-flex rule">规格</view>
+        <view class="ds-flex wrap-wp stand_con">
+          <view class="ds-flex pack-center align-center stands {{ standard_now.index==index?'cur':''}} {{item.stock_num == 0?'no':''}}" wx:for="{{ list[cur_index].goods[standard_now.idx].standard}}" data-stand="{{index}}" data-stock="{{ item.stock_num }}" bindtap="tap_standard">{{ item.name }}</view>
+        </view>
+      </view>
+      <view class="ds-flex bot pack-between">
+        <view class="ds-flex pack-center align-center price">
+          <view class="ds-flex ico">￥</view>
+          <view class="ds-flex p ">{{ list[cur_index].goods[standard_now.idx].standard[standard_now.index].price }}</view>
+        </view>
+        <view class="ds-flex control {{ list[cur_index].goods[standard_now.idx].standard[standard_now.index].stock_num?'':'fn-hide'}}" catchtap="nothing">
+          <view class="ds-flex flex-1 align-center controls des {{list[cur_index].goods[standard_now.idx].standard[standard_now.index].g_num?'':'fn-hide'}}" catchtap="cart_s" data-con="des" data-gid="{{ list[cur_index].goods[standard_now.idx].goods_id}}" data-cid="{{list[cur_index].goods[standard_now.idx].classify_id}}"
+            data-tid="{{list[cur_index].goods[standard_now.idx].type_id}}" data-sid="{{list[cur_index].goods[standard_now.idx].standard[standard_now.index].standard_id}}" data-itemidx="{{standard_now.idx}}" data-itemindex="{{standard_now.index}}">
+            <image src="/image/goods_list/des_42x42.png" style="width:42rpx;height:42rpx;"></image>
+          </view>
+          <view class="ds-flex pack-center align-center nums {{list[cur_index].goods[standard_now.idx].standard[standard_now.index].g_num?'':'fn-hide'}}" catchtap="nothing">{{list[cur_index].goods[standard_now.idx].standard[standard_now.index].g_num}}</view>
+          <view class="ds-flex flex-1 pack-end align-center controls plus" catchtap="cart_s" data-con="plus" data-gid="{{ list[cur_index].goods[standard_now.idx].goods_id}}" data-cid="{{list[cur_index].goods[standard_now.idx].classify_id}}" data-tid="{{list[cur_index].goods[standard_now.idx].type_id}}"
+            data-sid="{{list[cur_index].goods[standard_now.idx].standard[standard_now.index].standard_id}}" data-itemidx="{{standard_now.idx}}" data-itemindex="{{standard_now.index}}">
+            <image src="/image/goods_list/plus_42x42.png" style="width:42rpx;height:42rpx;"></image>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

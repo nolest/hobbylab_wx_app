@@ -1,0 +1,92 @@
+/**index.wxss**/
+$img_radius:8rpx;
+$line_height:40rpx;
+$reply_radius:8rpx;
+.pagemain{
+    .comment-list-wrap {
+      padding: 20rpx 40rpx;
+      .comment-info-wrap {
+        margin-bottom: 80rpx;
+        /*头像*/
+        .avatar-wrap {
+          margin-right: 30rpx;
+          .avatar {
+            height: 80rpx;
+            width: 80rpx;
+            border-radius: 50%;
+          }
+        }
+        /*评论信息*/
+        .info-wrap {
+          .name-wrap {
+            padding-top: 10rpx;
+            padding-bottom: 18rpx;
+            .name {
+              font-size: 28rpx;
+              color: #364242;
+            }
+            .time {
+              font-size: 24rpx;
+              color: #9ba8a9;
+            }
+          }
+          .level-wrap {
+            position: relative;
+            width: 170rpx;
+            height: 22rpx;
+            overflow: hidden;
+            margin-bottom: 18rpx;
+            .level {
+              width: 170rpx;
+              height: 22rpx;
+            }
+            .level-yellow {
+              position: absolute;
+              left: 0rpx;
+            }
+          }
+          .comment-wrap {
+            margin-right: 20rpx;
+            .content {
+              font-size: 26rpx;
+              color: #707777;
+              word-break:break-all;
+            }
+            .comment-img {
+              .img {
+                margin-top: 26rpx;
+                margin-right: 26rpx;
+                border-radius: $img_radius;
+                width: 162rpx;
+                height: 162rpx;
+              }
+              .img:nth-child(3n+3) {
+                margin-right: 0rpx;
+              }
+            }
+          }
+          .reply-wrap {
+            margin-top: 25rpx;
+            background-color: #f4f9f9;
+            padding: 30rpx 40rpx 25rpx 30rpx;
+            border-radius: $reply_radius;
+            margin-right: 20rpx;
+            .seller-reply {
+              font-size: 24rpx;
+              color: #364242;
+              padding-bottom: 24rpx;
+            }
+            .content {
+              font-size: 24rpx;
+              color: #9ba8a9;
+            }
+          }
+        }
+      }
+    }
+}
+.no-data {
+  text-align: center;
+  font-size: 30rpx;
+  padding: 15rpx;
+}

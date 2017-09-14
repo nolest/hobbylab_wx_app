@@ -1,0 +1,156 @@
+<!--pages/goods_details/goods_details.wxml-->
+<import src="../../utils/wxParse_v2/wxParse.wxml"/>
+<view class="ds-flex flex-v pagemain">
+    <view class="ds-flex flex-v {{ tap_cur==0?'fn-hide':'' }}" scroll-y="true" style="margin-bottom:50px;" bindscrolltolower="index_bot" scroll-top="{{scrollTop}}">
+        <swiper class="ds-flex" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-color="#eeeef0" indicator-active-color="#ffd100" style="height:{{ window.windowWidth/3*2 }}px;" >
+            <block wx:for="{{ info.image }}">
+                <swiper-item>
+                    <image src="{{ item }}" class="slide-image" mode="aspectFill" style="height:{{ window.windowWidth/3*2 }}px;width:{{ window.windowWidth }}px" />
+                </swiper-item>
+            </block>
+        </swiper>
+        <view class="ds-flex flex-v info">
+            <view class="title">{{ info.title }}</view>
+            <view class="desc">{{ info.description }}</view>
+            <view class="ds-flex control pack-between align-center">
+                <view class="ds-flex ins">
+                    <view class="ds-flex price">
+                        <view class="ds-flex align-center ico">￥</view>
+                        <view>{{ info.price }}</view>
+                        <view style="font-size:24rpx;margin-top:3px;">{{info.unit}}</view>
+                    </view>
+                    <view class="ds-flex align-center num">{{ info.buy_num }}</view>
+                </view>
+                <block wx:if="{{1>=info.standard.length}}">
+                    <view class="ds-flex controle {{info.standard[0].g_num?'':'fn-hide'}}">
+                        <view class="ds-flex flex-1 align-center controls des" catchtap="cart" data-con="des">
+                            <image src="/image/goods_details/des_42x42.png" style="width:42rpx;height:42rpx;"></image>
+                        </view>
+                        <view class="ds-flex pack-center align-center nums">{{info.standard[0].g_num}}</view>
+                        <view class="ds-flex flex-1 pack-end align-center controls plus" catchtap="cart" data-con="plus">
+                            <image src="/image/goods_details/plus_42x42.png" style="width:42rpx;height:42rpx;"></image>
+                        </view>
+                    </view>
+                    <view class="ds-flex controle y pack-end align-center {{info.standard[0].g_num?'fn-hide':'' }}" catchtap="choose">
+                        <view class="ds-flex standard pack-center align-center">加入购物车</view>
+                    </view>
+                </block>
+                <block wx:else>
+                    <view class="ds-flex controle y pack-end align-center {{info.g_num || info.standard.length > 1?'':'fn-hide'}}" catchtap="choose">
+                        <view class="ds-flex standard pack-center align-center">选规格</view>
+                    </view>
+                </block>
+            </view>
+        </view>
+        <view class="content">
+            <template is="wxParse" data="{{wxParseData:introduce.nodes}}"/>
+        </view>
+        <view class="empty" wx:if="{{ info.appraise.total>0 }}"></view>
+        <view class="ds-flex flex-v coment" wx:if="{{ info.appraise.total>0 }}">
+            <view class="coment_title">评价</view>
+            <view class="comment-list-wrap">
+                <view class="comment-info-wrap ds-flex pack-between" wx:for="{{ info.appraise.list }}" wx:key="parentUnique" wx:for-item="parentItem">
+                    <view class="avatar-wrap">
+                        <image class="avatar" src="{{ parentItem.user.avatar }}"></image>
+                    </view>
+                    <view class="info-wrap ds-flex flex-v flex-1">
+                        <view class="name-wrap ds-flex pack-between">
+                            <view class="name">{{ parentItem.user.name }}</view>
+                            <view class="time">{{ parentItem.add_time }}</view>
+                        </view>
+                        <view class="level-wrap ds-flex">
+                            <image src="../../image/comment/star-gray-icon-170x22.png" class="level"></image>
+                            <image src="../../image/comment/star-yellow-icon-170x22.png" class="level level-yellow" style="left:-{{ 100-parentItem.rating*20 }}%"></image>
+                        </view>
+                        <view class="comment-wrap ds-flex flex-v">
+                            <view class="cmt-content">{{ parentItem.comment }}</view>
+                            <view class="comment-img ds-flex wrap-wp pack-start align-start" wx:if="{{ parentItem.images.length > 0 }}">
+                                <image mode="aspectFill" class="img" src="{{ item.small }}" data-src="{{ item.big }}" wx:key="unique" wx:for="{{ parentItem.images }}" bindtap="previewImg"></image>
+                            </view>
+                        </view>
+                        <view class="reply-wrap ds-flex flex-v" wx:if="{{ parentItem.reply }}">
+                            <view class="seller-reply">商家回复：</view>
+                            <view class="content">{{ parentItem.reply }}</view>
+                        </view>
+                        <!--<view class="reply-wrap ds-flex flex-v">
+                            <view class="seller-reply">商家回复：</view>
+                            <view class="reply-content">我是商家回复测试的内容我是商家回复测试的内容我是商家回复测试的内容测试的内容</view>
+                        </view>-->
+                    </view>
+                </view>
+            </view>
+            <view class="ds-flex align-center pack-between coment_more" bindtap="go_to_comment_list">
+                <view class="ds-flex">阅读更多评论({{ info.appraise.total }})</view>
+                <view style="font-size:0">
+                    <image src="/image/goods_details/more_20x20.png" style="width:20rpx;height:20rpx"></image>
+                </view>
+            </view>
+        </view>
+        <view class="empty"></view>
+        <view class="ds-flex flex-v store" bindtap="go_to_store" data-user="{{info.seller.user_id}}">
+            <view class="ds-flex pack-between align-center top">
+                <view class="ds-flex flex-1">
+                    <view class="img_con" >
+                        <image src="{{info.seller.avatar}}" style="width:100rpx;height:100rpx;border-radius:50rpx;"></image>
+                    </view>
+                    <view class="ds-flex flex-v inner_info">
+                        <view class="inner_title">{{info.seller.name}}</view>
+                        <view class="ds-flex inner_add">{{info.seller.store[0].address}}</view>
+                    </view>
+                </view>
+                <view class="ds-flex flex-v pack-between align-center sell">
+                    <view>月售</view>
+                    <view class="trade">{{info.seller.trade_num}}</view>
+                </view>
+            </view>
+            <view class="ds-flex bot wrap-wp">
+                <view class="ds-flex pack-center align-center names" wx:for="{{ info.seller.professions }}">{{item.name}}</view>
+            </view>
+        </view>
+    </view>
+
+
+    <view class="ds-flex pack-center align-center standard_fade {{ standard_fade?'now':'' }}" style="height:{{ window.windowHeight }}px;width:{{ window.windowWidth }}px"> 
+        <view class="ds-flex flex-v pack-between mode_window" style="width:{{ window.windowWidth-60 }}px;">
+            <view class="ds-flex pack-between align-center top">
+                <view class="img_con" style="width:32rpx"></view>
+                <view class="ds-flex in_title">{{ info.title }}</view>
+                <view class="img_con" bindtap="hide_standard_fade">
+                    <image src="/image/goods_details/fade_32x32.png" style="width:32rpx;height:32rpx"></image>
+                </view>
+            </view>
+            <view class="ds-flex flex-v middle">
+                <view class="ds-flex rule">规格</view>
+                <view class="ds-flex wrap-wp stand_con">
+                    <view class="ds-flex pack-center align-center stands {{ standard_now.index==index?'cur':''}} {{item.stock_num == 0 ?'no':''}}"  wx:for="{{ info.standard}}" data-stand="{{index}}" data-stock="{{ item.stock_num }}" bindtap="tap_standard" data-status="{{item.status_str}}">{{ item.name }}</view>
+                </view>
+            </view>
+            <view class="ds-flex bot pack-between">
+                <view class="ds-flex pack-center align-center price">
+                    <view class="ds-flex ico">￥</view>
+                    <view class="ds-flex p ">{{ info.standard[standard_now.index].price }}</view>
+                </view>
+                <view class="ds-flex control {{ info.standard[standard_now.index].stock_num?'':'fn-hide'}}" catchtap="nothing">
+                    <view class="ds-flex flex-1 align-center controls des {{info.standard[standard_now.index].g_num?'':'fn-hide'}}" catchtap="cart_s" data-con="des" data-gid="{{ info.goods_id}}" data-cid="{{info.classify_id}}" data-tid="{{info.type_id}}" data-sid="{{info.standard[standard_now.index].standard_id}}" data-itemidx="{{standard_now.index}}" data-itemindex="{{standard_now.index}}">
+                        <image src="/image/goods_details/des_42x42.png" style="width:42rpx;height:42rpx;"></image>
+                    </view>
+                    <view class="ds-flex pack-center align-center nums {{info.standard[standard_now.index].g_num?'':'fn-hide'}}" catchtap="nothing">{{info.standard[standard_now.index].g_num}}</view>
+                    <view class="ds-flex flex-1 pack-end align-center controls plus" catchtap="cart_s" data-con="plus" data-gid="{{ info.goods_id}}" data-cid="{{info.classify_id}}" data-tid="{{info.type_id}}" data-sid="{{info.standard[standard_now.index].standard_id}}" data-itemidx="{{standard_now.index}}" data-itemindex="{{standard_now.index}}">
+                        <image src="/image/goods_details/plus_42x42.png" style="width:42rpx;height:42rpx;"></image>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+    <view class="ds-flex bar pack-between align-center">
+        <view class="ds-flex cart" bindtap="choosen">
+            <view class="ds-flex pack-center align-center cart_icon">
+                <image src="{{total_num?cart_cur:cart}}" style="width:60rpx;height:60rpx;"></image>
+            </view>
+            <view class="ds-flex pack-center align-center num {{total_num?'':'fn-hide' }}">{{ total_num }}</view>
+            <view class="ds-flex align-center price fn-hide">￥50</view>
+        </view>
+        <view class="ds-flex pack-center align-center choosen {{total_num?'':'un'}}" bindtap="choosen">选好了</view>
+    </view>
+    <!--view style="position:fixed;top:200px;left:150px;z-index:1000000">123</view-->

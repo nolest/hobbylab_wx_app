@@ -1,0 +1,138 @@
+/* pages/order_list/order_list.wxss */
+.pagemain{
+  position: relative;
+  .tap_bar{
+    height: 43px;
+    border-bottom: 1px solid #e8f0f0;
+    position: fixed;
+    background: #fff;
+    top: 0px;
+    width:100%;
+    z-index: 100;
+    .el{
+      .empty{
+        height: 6rpx;
+      }
+      .text{
+        font-size: 30rpx;
+        font-weight: 600;
+        color: #9ba8a9;
+      }
+      .border{
+        height: 6rpx;
+        width: 50rpx;
+        background: none;
+      }
+      &.now{
+        .text{
+          color: #364242;
+        }
+        .border{
+          background: #ffd100;
+        }
+      }
+    }
+
+  }
+  .scroll{
+    margin-top : 44px;
+    background: #f7f9f9;
+  }
+  .seller{
+    background: #fff;
+    .in_title{
+      height: 88rpx;
+      border-bottom: 1rpx dotted #e8f0f0;
+      margin: 0rpx 40rpx;
+      color: #707777;
+      font-size: 28rpx;
+      font-weight: 600;
+      .slim{
+        font-weight: auto;
+        font-size: 26rpx;
+      }
+    }
+    .body_title{
+      margin: 34rpx 40rpx 0rpx 40rpx;
+      padding-bottom: 10rpx;
+      border-bottom: 1rpx solid #e8f0f0;
+      .info_con{
+        margin-bottom: 20rpx;
+        .name{
+          font-size: 28rpx;
+          color: #364242;
+          font-weight: 600;
+        }
+        .info{
+          margin-left: 50rpx;
+          .num{
+            font-size: 24rpx;
+            color: #9ba8a9;
+            margin-top: 2rpx;
+          }
+          .price{
+            min-width: 150rpx;
+
+
+            .ico{
+              color: #707777;
+              font-size: 22rpx;
+              margin-top: 2rpx;
+            }
+            .p{
+              font-size: 28rpx;
+              color: #707777;
+            }
+          }
+        }
+      }
+    }
+    .end_title{
+      color: #364242;
+      height: 106rpx;
+      padding: 0rpx 40rpx;
+      .e{
+        color: #b4bdbe;
+        font-size: 26rpx;
+      }
+      .l{
+        font-size: 26rpx;
+      }
+      .m{
+        font-size: 26rpx;
+      }
+      .r{
+        font-size: 30rpx;
+        font-weight: 600;
+      }
+    }
+    .elimate{
+      border-top: 1rpx solid #e8f0f0;
+      margin: 0rpx 40rpx;
+      .action{
+        margin: 30rpx 0rpx;
+        min-width: 196rpx;
+        color: #ffce6a;
+        border: 2rpx solid #ffce6a;
+        height: 56rpx;
+        border-radius: 28rpx;
+        font-size: 26rpx;
+      }
+    }
+
+
+    .emt{
+      height: 20rpx;
+      background: #f7f9f9;
+    }
+  }
+  .emt_con{
+    image{
+      margin-bottom: 16rpx;
+    }
+    view{
+      font-size: 30rpx;
+      color: #9ba8a9;
+    }
+  }
+}

@@ -1,0 +1,288 @@
+/* pages/submit_order/submit_order.wxss */
+page {
+  background-color: #f7f9f9; }
+
+.pagemain .emt_o {
+  height: 20rpx;
+  background: #f7f9f9; }
+
+.pagemain .char {
+  background: #f7f9f9;
+  text-align: center;
+  height: 80rpx;
+  font-size: 0; }
+  .pagemain .char .fonts {
+    color: #9ba8a9;
+    font-size: 26rpx; }
+
+.pagemain .emt_con {
+  font-size: 0px;
+  margin-bottom: 10rpx; }
+
+.pagemain .emt_info {
+  color: #9ba8a9;
+  font-size: 30rpx; }
+
+.pagemain .seller {
+  background-color: #fff; }
+  .pagemain .seller .in_title {
+    height: 88rpx;
+    border-bottom: 2rpx dashed #e8f0f0;
+    margin: 0rpx 40rpx;
+    color: #707777;
+    font-size: 28rpx;
+    font-weight: 600; }
+  .pagemain .seller .body_title {
+    margin: 34rpx 40rpx 0rpx 40rpx;
+    padding-bottom: 10rpx;
+    border-bottom: 1rpx solid #e8f0f0; }
+    .pagemain .seller .body_title .info_con {
+      margin-bottom: 26rpx; }
+      .pagemain .seller .body_title .info_con .name {
+        font-size: 28rpx;
+        color: #364242;
+        font-weight: 600; }
+      .pagemain .seller .body_title .info_con .standard {
+        margin-top: 16rpx;
+        font-size: 28rpx;
+        color: #9ba8a9; }
+      .pagemain .seller .body_title .info_con .info .num {
+        font-size: 24rpx;
+        color: #9ba8a9;
+        margin-top: 2rpx; }
+      .pagemain .seller .body_title .info_con .info .price {
+        min-width: 150rpx;
+        font-weight: 600; }
+        .pagemain .seller .body_title .info_con .info .price .ico {
+          color: #707777;
+          font-size: 22rpx;
+          margin-top: 2rpx; }
+        .pagemain .seller .body_title .info_con .info .price .p {
+          font-size: 28rpx;
+          color: #707777; }
+  .pagemain .seller .body_middle {
+    padding: 0rpx 40rpx;
+    border-bottom: 2rpx dashed #e8f0f0;
+    height: 106rpx;
+    font-size: 26rpx; }
+    .pagemain .seller .body_middle .t {
+      color: #364242; }
+    .pagemain .seller .body_middle .d {
+      color: #7b8181; }
+  .pagemain .seller .end_title {
+    color: #364242;
+    height: 106rpx;
+    padding: 0rpx 40rpx; }
+    .pagemain .seller .end_title .q {
+      font-size: 26rpx; }
+    .pagemain .seller .end_title .l {
+      margin-left: 20rpx;
+      font-size: 26rpx; }
+    .pagemain .seller .end_title .m {
+      font-size: 24rpx;
+      color: #31d4da; }
+    .pagemain .seller .end_title .r {
+      font-size: 30rpx;
+      font-weight: 600;
+      color: #31d4da; }
+  .pagemain .seller .emt {
+    height: 20rpx;
+    background: #f7f9f9; }
+
+.pagemain .bill_con {
+  background-color: #fff;
+  padding: 0rpx 40rpx; }
+  .pagemain .bill_con .bill {
+    height: 100rpx;
+    font-size: 28rpx;
+    border-bottom: 2rpx dashed #e8f0f0; }
+    .pagemain .bill_con .bill .t {
+      color: #364242; }
+    .pagemain .bill_con .bill .m {
+      font-size: 26rpx;
+      color: #31d4da; }
+    .pagemain .bill_con .bill .v {
+      color: #31d4da;
+      font-size: 34rpx;
+      font-weight: 600; }
+    .pagemain .bill_con .bill:last-child {
+      border-bottom: none; }
+
+.pagemain .coupon_con {
+  background-color: #fff;
+  padding: 0rpx 40rpx; }
+  .pagemain .coupon_con .coupon_in {
+    height: 88rpx; }
+    .pagemain .coupon_con .coupon_in .t {
+      color: #364242;
+      font-size: 28rpx; }
+    .pagemain .coupon_con .coupon_in .d {
+      color: #7b8181;
+      font-size: 28rpx; }
+
+.pagemain .card_con {
+  background-color: #fff;
+  padding: 0rpx 40rpx; }
+  .pagemain .card_con .card_in {
+    min-height: 128rpx; }
+    .pagemain .card_con .card_in .t .x {
+      font-size: 28rpx;
+      color: #364242; }
+    .pagemain .card_con .card_in .t .y {
+      font-size: 24rpx;
+      color: #9ba8a9;
+      margin-top: 16rpx; }
+
+.pagemain .bar {
+  height: 50px;
+  padding-right: 15px;
+  box-shadow: 0px 0px 2px 3px rgba(127, 127, 127, 0.1);
+  background-color: #fff; }
+  .pagemain .bar .l_con {
+    padding-left: 20px; }
+    .pagemain .bar .l_con .notice {
+      font-size: 15px;
+      color: #707777; }
+    .pagemain .bar .l_con .price {
+      color: #364242;
+      font-size: 15px; }
+      .pagemain .bar .l_con .price .p {
+        font-size: 18px; }
+  .pagemain .bar .choosen {
+    width: 140px;
+    height: 38px;
+    background: -webkit-linear-gradient(left, #58cbdc 0%, #01d9d6 100%);
+    color: #fff;
+    border-radius: 19px;
+    font-size: 15px; }
+
+.pagemain .pay_success {
+  transition: background-color 0.4s,transform 0.2s;
+  transform: scale(0, 0);
+  position: fixed;
+  top: 0px;
+  z-index: 10000;
+  background: #fff; }
+  .pagemain .pay_success.now {
+    transform: scale(1, 1);
+    background: #fff; }
+  .pagemain .pay_success .top .img_con {
+    margin-top: 50rpx;
+    font-size: 0;
+    margin-bottom: 50rpx; }
+  .pagemain .pay_success .top .su {
+    margin: 0rpx 40rpx 0rpx 40rpx;
+    padding-bottom: 40rpx;
+    font-size: 32rpx;
+    color: #707777;
+    border-bottom: 1rpx solid #e8f0f0;
+    font-weight: 600; }
+  .pagemain .pay_success .top .line_con {
+    margin: 0rpx 40rpx;
+    padding-top: 36rpx;
+    padding-bottom: 12rpx;
+    border-bottom: 1rpx solid #e8f0f0;
+    font-size: 28rpx;
+    color: #364242; }
+    .pagemain .pay_success .top .line_con .line {
+      margin-bottom: 12px; }
+  .pagemain .pay_success .top .go_order {
+    margin: 40rpx 80rpx 30rpx 80rpx;
+    background: -webkit-linear-gradient(left, #58cbdc 0%, #01d9d6 100%);
+    color: #fff;
+    font-size: 32rpx;
+    height: 80rpx;
+    border-radius: 40rpx; }
+  .pagemain .pay_success .top .go_index {
+    font-size: 26rpx;
+    color: #707777; }
+  .pagemain .pay_success .bot {
+    font-size: 26rpx;
+    color: #cdd3d4;
+    margin-bottom: 36rpx; }
+    .pagemain .pay_success .bot .s_line {
+      background: #edefef;
+      width: 2rpx;
+      height: 20rpx;
+      margin: 0rpx 18rpx; }
+
+.pagemain .pay_fail {
+  transition: background-color 0.4s,transform 0.2s;
+  transform: scale(0, 0);
+  position: fixed;
+  top: 0px;
+  z-index: 10000;
+  background: #fff; }
+  .pagemain .pay_fail.now {
+    transform: scale(1, 1);
+    background: #fff; }
+  .pagemain .pay_fail .top .img_con {
+    margin-top: 40rpx;
+    font-size: 0;
+    margin-bottom: 50rpx; }
+  .pagemain .pay_fail .top .su {
+    margin: 0rpx 40rpx 0rpx 40rpx;
+    padding-bottom: 40rpx;
+    font-size: 32rpx;
+    color: #707777;
+    border-bottom: 1rpx solid #e8f0f0;
+    font-weight: 600; }
+  .pagemain .pay_fail .top .go_order {
+    margin: 40rpx 80rpx;
+    background: -webkit-linear-gradient(left, #58cbdc 0%, #01d9d6 100%);
+    color: #fff;
+    font-size: 32rpx;
+    height: 80rpx;
+    border-radius: 40rpx; }
+  .pagemain .pay_fail .top .go_index {
+    font-size: 26rpx;
+    color: #707777; }
+  .pagemain .pay_fail .bot {
+    font-size: 26rpx;
+    color: #cdd3d4;
+    margin-bottom: 36rpx; }
+    .pagemain .pay_fail .bot .s_line {
+      background: #edefef;
+      width: 2rpx;
+      height: 20rpx;
+      margin: 0rpx 18rpx; }
+
+.pagemain .standard_fade {
+  transition: background-color 0.4s,transform 0.2s;
+  transform: scale(0, 0);
+  background-color: transparent;
+  position: fixed;
+  top: 0px;
+  z-index: 10000;
+  background: rgba(0, 0, 0, 0.6); }
+  .pagemain .standard_fade.now {
+    transform: scale(1, 1);
+    background-color: rgba(0, 0, 0, 0.6); }
+  .pagemain .standard_fade .pannel {
+    background: #fff;
+    border-radius: 8rpx 8rpx 0px 0px; }
+  .pagemain .standard_fade .mode_window {
+    color: #364242;
+    background: #fff;
+    border-radius: 8rpx 8rpx 0px 0px;
+    overflow: hidden;
+    text-align: center; }
+    .pagemain .standard_fade .mode_window .title {
+      font-size: 32rpx;
+      color: #364242;
+      height: 100rpx;
+      padding-top: 12rpx; }
+    .pagemain .standard_fade .mode_window .c_choose {
+      padding-right: 40rpx;
+      min-height: 107rpx;
+      border-bottom: 1rpx solid #e8f0f0;
+      font-size: 28rpx;
+      margin-left: 40rpx; }
+      .pagemain .standard_fade .mode_window .c_choose:last-child {
+        border-bottom: none;
+        margin-bottom: 40rpx; }
+    .pagemain .standard_fade .mode_window .close {
+      box-shadow: 0px 0px 3px 3px rgba(170, 170, 170, 0.1);
+      font-size: 32rpx;
+      color: #364242;
+      height: 100rpx; }

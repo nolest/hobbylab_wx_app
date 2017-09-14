@@ -1,0 +1,24 @@
+<!--index.wxml-->
+<view class="ds-flex flex-v pagemain">
+  <scroll-view class="{{ tap_cur==0?'fn-hide':'' }}" scroll-y="true" style="height: {{windowHeight-56}}px;" bindscrolltolower="index_bot">
+  <view class="ds-flex flex-v pack-center align-center" style="height:100%">
+    <view>ds-flex flex-v pack-center align-center</view>
+    <view>伸缩盒2012年 版本</view>
+  </view> 
+  </scroll-view>
+  <view class="ds-flex pack-between bar">
+    <view class="ds-flex flex-1 flex-v tap pack-center align-center" bindtap="taps_on" data-num="0">
+      <image style="width: 27px; height: 27px;" src="{{ tap_cur==0?icons.index:icons.index_2 }}"></image>
+      <view class="{{ tap_cur==0?'normal':'cur' }}">首页</view>
+    </view>
+      <view class="ds-flex flex-1 flex-v tap pack-center align-center" bindtap="taps_on" data-num="1">
+        <image style="width: 27px; height: 27px;" src="{{ tap_cur==1?icons.order:icons.order_2 }}"></image>
+        <view class="{{ tap_cur==1?'normal':'cur' }}">订单</view>
+      </view>
+  </view>
+    <view class="ds-flex flex-v pack-center map_fade {{ show_map?'':'fn-hide' }}" style="height:{{ windowHeight }}px;width:{{ windowWidth }}px">
+        <view class="ds-flex flex-1 pack-end map_close" bindtap="map_close"></view>
+        <map id="map" class="{{ show_map?'':'fn-hide' }}" longitude="{{ for_maps.longitude }}" latitude="{{ for_maps.latitude }}" include-points="{{for_maps.includePoints}}" scale="16" markers="{{ for_maps.markers }}" show-location style="width: 100%; height: 300px;"></map>
+        <view class="ds-flex flex-1 pack-end map_close" bindtap="map_close"></view>
+    </view>
+</view>

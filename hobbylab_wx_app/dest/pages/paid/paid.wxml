@@ -1,0 +1,39 @@
+<!--pages/paid/paid.wxml-->
+<view class="page" style="width:{{window.windowWidth}}px;height:{{window.windowHeight}}px;background:#000">
+
+    <view class="fonts fonts-2" style="font-size:14px;">好</view>
+    <view class="fonts fonts-2" style="font-size:15px;">好</view>
+    <view class="fonts fonts-2" style="font-size:16px;">好</view>
+    <view class="fonts fonts-2" style="font-size:14px; ">g</view>
+    <view class="fonts fonts-2" style="font-size:15px; ">g</view>
+    <view class="fonts fonts-2" style="font-size:16px; ">g</view>
+    <view class="fonts fonts-2" style="font-size:20px; ">g</view>
+    <view class="fonts fonts-r2" style="font-size:28rpx;">好</view>
+    <view class="fonts fonts-r2" style="font-size:30rpx;">好</view>
+    <view class="fonts fonts-r2" style="font-size:32rpx;">好</view>
+    <view class="fonts fonts-r2" style="font-size:28rpx;">g</view>
+    <view class="fonts fonts-r2" style="font-size:30rpx;">g</view>
+    <view class="fonts fonts-r2" style="font-size:32rpx;">g</view>
+    <view class="fonts fonts-r2" style="font-size:40rpx;">g</view>
+    <!--view class="fonts" style="font-size:18px;">你好</view><view class="fonts" style="font-size:18px;">g</view>   
+    <view class="fonts" style="font-size:36rpx;">你好</view><view class="fonts" style="font-size:36rpx;">g</view-->
+   
+    <view class="fonts fonts-4" style="font-size:44px;">好</view><view class="fonts fonts-4" style="font-size:44px;">g</view>
+    <view class="fonts fonts-r4" style="font-size:88rpx;">好</view><view class="fonts  fonts-r4" style="font-size:88rpx;">g</view>
+    <view class="fonts fonts-r4" style="font-size:88rpx;">gab</view>
+    <view style="position:fixed;top:3px;height:1rpx;width:100%;background:red"></view>
+    <view style="position:fixed;top:39px;height:1rpx;width:100%;background:red"></view>
+    <!--view style="position:fixed;top:84rpx;height:1rpx;width:100%;background:red"></view>
+    <!--view class="fonts" style="font-size:22px;">你好</view><view class="fonts" style="font-size:22px;">g</view>
+    <view class="fonts" style="font-size:44px;">你好</view><view class="fonts" style="font-size:44px;">g</view>
+     <view class="fonts" style="font-size:20px;">你好</view><view class="fonts" style="font-size:20px;">g</view>
+    <view class="fonts" style="font-size:16px;">你好</view><view class="fonts" style="font-size:16px;">g</view>
+
+    
+   
+    
+    <view class="fonts" style="font-size:44rpx;">你好</view><view class="fonts" style="font-size:44rpx;">g</view>
+    <view class="fonts" style="font-size:88rpx;">你好</view><view class="fonts" style="font-size:88rpx;">g</view>
+    <view class="fonts" style="font-size:32rpx;">你好</view><view class="fonts" style="font-size:32rpx;">g</view-->
+</view>
+

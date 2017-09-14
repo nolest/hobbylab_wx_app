@@ -1,0 +1,54 @@
+<!--pages/comment/comment.wxml-->
+<view class="ds-flex flex-v pagemain">
+    <view class="container-wrap">
+        <view class="container-item-wrap" wx:for="{{ comment_list }}" wx:for-index="idx" wx:for-item="parentItem">
+            <view class="info-wrap ds-flex align-start">
+                <view class="cover-wrap ds-flex">
+                    <image class="img" src="{{ parentItem.image}}"></image>
+                </view>
+                <view class="name-wrap ds-flex flex-v pack-between flex-1">
+                    <view class="name-standard">
+                        <view class="name">{{ parentItem.title }}</view>
+                        <view class="standard">规格：{{ parentItem.standard_name }}</view>
+                    </view>
+                    <view class="level-wrap ds-flex pack-between">
+                        <view class="level-star">
+                            <image src="../../image/comment/star-gray-icon-260x36.png" class="level"></image>
+                            <image src="../../image/comment/star-yellow-icon-260x36.png" class="level level-yellow" style="left:-{{ 100-parentItem.level*20 }}%"></image>
+                            <view class="level-click ds-flex">
+                                <view class="star-opcity" data-index="{{ idx }}" data-seq="0" bindtap="starTap"></view>
+                                <view class="star-opcity" data-index="{{ idx }}" data-seq="1" bindtap="starTap"></view>
+                                <view class="star-opcity" data-index="{{ idx }}" data-seq="2" bindtap="starTap"></view>
+                                <view class="star-opcity" data-index="{{ idx }}" data-seq="3" bindtap="starTap"></view>
+                                <view class="star-opcity" data-index="{{ idx }}" data-seq="4" bindtap="starTap"></view>    
+                            </view>
+                        </view>
+                        <view class="level-name">{{ parentItem.level_name }}</view>
+                    </view>
+                </view>     
+            </view>
+            <view class="text-wrap ds-flex wrap-wp">
+                <textarea class="comment-text flex-1" maxlength="-1" data-index="{{ idx }}" placeholder="你的服务体验如何？有何心得，分享给大家吧~" value="{{ parentItem.content }}" bindinput="textAreaChange" auto-height placeholder-style="color:#a0aaaa;"/>
+            </view>
+            <view class="img-wrap ds-flex pack-start">
+                    <view class="img-list ds-flex pack-start wrap-wp">
+                        <view class="image-wrap" wx:for="{{ parentItem.img_list }}" wx:for-index="child_idx" wx:for-item="item">
+                            <image class="img" src="{{ item }}"></image>
+                            <image src="../../image/comment/del-img-40x40.png" class="cancel-icon" data-child-index="{{ child_idx }}" data-index="{{ idx }}" bindtap="imgCancel"></image>
+                        </view>
+                        <view class="add-btn-wrap {{ parentItem.btn_show }}">
+                            <image class="add-btn" src="../../image/comment/img-choose-162x162.png" bindtap="imgAdd" data-index="{{ idx }}"></image>
+                        </view>
+                    </view> 
+                </view> 
+                <view class="anonymous-wrap ds-flex align-center">
+                    <image class="anonymous-icon" data-index="{{ idx }}" data-anonymous-value="{{ parentItem.is_anonymous }}" src="{{ parentItem.is_anonymous=='1'?anonymous_choose_img:anonymous_no_choose_img }}" bindtap="anonymousChange"></image>     
+                    <view class="anonymous-name" data-index="{{ idx }}" data-anonymous-value="{{ parentItem.is_anonymous }}" bindtap="anonymousChange">匿名评价</view>
+                </view>  
+            </view>
+    </view>
+    <view class="btn-wrap ds-flex pack-center align-center">
+        <view class="bottom-btn" bindtap="submitInfo">发布评价</view>  
+    </view>
+     
+</view>

@@ -1,0 +1,54 @@
+/* pages/mine_edit/mine_edit.wxss */
+.pagemain{
+  background-color: #fff;
+  .list-wrap {
+    .info-wrap {
+      margin-left: 40rpx;
+      height: 110rpx;
+      border-bottom: 1rpx solid #e8f0f0;
+      padding-right: 40rpx;
+      .left-info {
+        font-size: 30rpx;
+        color: #707777;
+      }
+      .right-info {
+        .info-icon {
+          width: 80rpx;
+          height: 80rpx;
+          display: block;
+          border-radius: 50%;
+        }
+        .arrow-icon {
+          width: 12rpx;
+          height: 20rpx;
+          display: block;
+          margin-left: 30rpx;
+        }
+        .input-tips {
+          color: #364242;
+          font-size: 30rpx;
+          text-align: right;
+        }
+        .text-tips {
+          color: #d3d8d8;
+          font-size: 30rpx;
+        }
+      }
+      .right-info-name {
+        padding-left: 20rpx;
+      }
+    }
+  }
+  .btn-wrap {
+    margin: 0 auto;
+    margin-top: 40rpx;
+    background: linear-gradient(to right,#58cbdc,#02d9d7);
+    height: 80rpx;
+    line-height: 80rpx;
+    text-align: center;
+    border-radius: 40rpx;
+    width: 590rpx;
+    font-size: 32rpx;
+    color: #fff;
+  }
+}

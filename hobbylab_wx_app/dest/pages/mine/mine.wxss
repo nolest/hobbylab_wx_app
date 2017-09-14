@@ -1,0 +1,65 @@
+/* pages/mine/mine.wxss */
+.pagemain {
+  background-color: #fff; }
+  .pagemain .user-info-wrap {
+    margin-top: 60rpx; }
+    .pagemain .user-info-wrap .icon-wrap {
+      position: relative;
+      width: 160rpx;
+      height: 160rpx; }
+      .pagemain .user-info-wrap .icon-wrap .img-big {
+        width: 160rpx;
+        height: 160rpx;
+        border-radius: 50%; }
+      .pagemain .user-info-wrap .icon-wrap .img-small {
+        position: absolute;
+        bottom: 0px;
+        right: 18rpx;
+        width: 40rpx;
+        height: 40rpx; }
+    .pagemain .user-info-wrap .name-wrap {
+      position: relative;
+      margin-top: 40rpx;
+      left: 24rpx; }
+      .pagemain .user-info-wrap .name-wrap .name {
+        font-weight: bold;
+        font-size: 32rpx;
+        color: #364242;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 500rpx; }
+      .pagemain .user-info-wrap .name-wrap .img-edit {
+        display: block;
+        margin-left: 24rpx;
+        width: 24rpx;
+        height: 24rpx; }
+    .pagemain .user-info-wrap .user-tips {
+      margin-top: 17rpx;
+      font-size: 26rpx;
+      color: #707777; }
+  .pagemain .list-wrap {
+    margin-top: 49rpx; }
+    .pagemain .list-wrap .info-wrap {
+      height: 110rpx;
+      margin-left: 40rpx;
+      border-bottom: 1rpx solid #e8f0f0;
+      padding-right: 40rpx; }
+      .pagemain .list-wrap .info-wrap .img-icon-wrap {
+        height: 40rpx; }
+        .pagemain .list-wrap .info-wrap .img-icon-wrap .img-icon {
+          width: 40rpx;
+          height: 40rpx;
+          display: block; }
+      .pagemain .list-wrap .info-wrap .info-text {
+        font-size: 30rpx;
+        color: #707777;
+        height: 40rpx;
+        line-height: 40rpx;
+        margin-left: 20rpx; }
+      .pagemain .list-wrap .info-wrap .arrow-icon-wrap {
+        height: 40rpx; }
+        .pagemain .list-wrap .info-wrap .arrow-icon-wrap .arrow-icon {
+          width: 12rpx;
+          height: 20rpx;
+          display: block; }

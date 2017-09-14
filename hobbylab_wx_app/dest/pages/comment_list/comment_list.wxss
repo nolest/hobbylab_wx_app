@@ -1,0 +1,67 @@
+@charset "UTF-8";
+/**index.wxss**/
+.pagemain .comment-list-wrap {
+  padding: 20rpx 40rpx; }
+  .pagemain .comment-list-wrap .comment-info-wrap {
+    margin-bottom: 80rpx;
+    /*头像*/
+    /*评论信息*/ }
+    .pagemain .comment-list-wrap .comment-info-wrap .avatar-wrap {
+      margin-right: 30rpx; }
+      .pagemain .comment-list-wrap .comment-info-wrap .avatar-wrap .avatar {
+        height: 80rpx;
+        width: 80rpx;
+        border-radius: 50%; }
+    .pagemain .comment-list-wrap .comment-info-wrap .info-wrap .name-wrap {
+      padding-top: 10rpx;
+      padding-bottom: 18rpx; }
+      .pagemain .comment-list-wrap .comment-info-wrap .info-wrap .name-wrap .name {
+        font-size: 28rpx;
+        color: #364242; }
+      .pagemain .comment-list-wrap .comment-info-wrap .info-wrap .name-wrap .time {
+        font-size: 24rpx;
+        color: #9ba8a9; }
+    .pagemain .comment-list-wrap .comment-info-wrap .info-wrap .level-wrap {
+      position: relative;
+      width: 170rpx;
+      height: 22rpx;
+      overflow: hidden;
+      margin-bottom: 18rpx; }
+      .pagemain .comment-list-wrap .comment-info-wrap .info-wrap .level-wrap .level {
+        width: 170rpx;
+        height: 22rpx; }
+      .pagemain .comment-list-wrap .comment-info-wrap .info-wrap .level-wrap .level-yellow {
+        position: absolute;
+        left: 0rpx; }
+    .pagemain .comment-list-wrap .comment-info-wrap .info-wrap .comment-wrap {
+      margin-right: 20rpx; }
+      .pagemain .comment-list-wrap .comment-info-wrap .info-wrap .comment-wrap .content {
+        font-size: 26rpx;
+        color: #707777;
+        word-break: break-all; }
+      .pagemain .comment-list-wrap .comment-info-wrap .info-wrap .comment-wrap .comment-img .img {
+        margin-top: 26rpx;
+        margin-right: 26rpx;
+        border-radius: 8rpx;
+        width: 162rpx;
+        height: 162rpx; }
+      .pagemain .comment-list-wrap .comment-info-wrap .info-wrap .comment-wrap .comment-img .img:nth-child(3n+3) {
+        margin-right: 0rpx; }
+    .pagemain .comment-list-wrap .comment-info-wrap .info-wrap .reply-wrap {
+      margin-top: 25rpx;
+      background-color: #f4f9f9;
+      padding: 30rpx 40rpx 25rpx 30rpx;
+      border-radius: 8rpx;
+      margin-right: 20rpx; }
+      .pagemain .comment-list-wrap .comment-info-wrap .info-wrap .reply-wrap .seller-reply {
+        font-size: 24rpx;
+        color: #364242;
+        padding-bottom: 24rpx; }
+      .pagemain .comment-list-wrap .comment-info-wrap .info-wrap .reply-wrap .content {
+        font-size: 24rpx;
+        color: #9ba8a9; }
+
+.no-data {
+  text-align: center;
+  font-size: 30rpx;
+  padding: 15rpx; }

@@ -1,0 +1,290 @@
+/* pages/coupon/coupon.wxss */
+$bg_color:rgba(0, 0, 0, 0.05);
+.pagemain {
+  background-color: #f7f9f9;
+  /*顶部筛选列表*/
+  .tag-list-wrap {
+
+    height: 88rpx;
+    background-color: #ffffff;
+    border-bottom: 1rpx solid #e8f0f0;
+    width: 100%;
+    z-index: 2;
+    .tag-info {
+      width: 250px;
+      .text {
+        font-size: 30rpx;
+        line-height: 82rpx;
+        color: #9ba8a9;
+        font-weight: bold;
+      }
+      .text-line {
+        height: 0rpx;
+        width: 50rpx;
+        border-bottom: 4rpx solid #ffd100;
+        display: none;
+      }
+    }
+    .tag-info-cur {
+      .text {
+        color: #364242;
+      }
+      .text-line {
+        display: block;
+      }
+    }
+  }
+  /*优惠券列表*/
+  .coupon-list-wrap {
+    background-color: #f7f9f9;
+    .coupon-info-wrap-available {
+      border-radius: 5rpx;
+      margin: 30rpx 40rpx;
+      background-color: #fff;
+      position: relative;
+      box-shadow: 0 0 25rpx $bg_color;
+      /*分上中下结构*/
+      /*顶部*/
+      .coupon-info-top {
+        padding: 24rpx 40rpx 16rpx;
+        .top-part {
+          .left-part {
+            max-width: 450rpx;
+            .title {
+              font-size: 30rpx;
+              font-weight: bold;
+              color: #364242;
+            }
+          }
+          .right-part {
+            .price-tips {
+              font-size: 26rpx;
+              font-weight: bold;
+              color: #31d4da;
+            }
+            .price {
+              font-size: 46rpx;
+              font-weight: bold;
+              color: #31d4da;
+            }
+          }
+        }
+        .bottom-part {
+          .left-part {
+            //width: 420rpx;
+            .text-tips {
+              font-size: 24rpx;
+              color: #707777;
+            }
+          }
+          .right-part {
+            padding-left: 20rpx;
+            .text-tips {
+              font-size: 24rpx;
+              color: #707777;
+            }
+          }
+        }
+      }
+      /*中间部分*/
+      .coupon-info-middle {
+        .left-border {
+          width: 10rpx;
+          height: 20rpx;
+          border-radius: 0 20rpx 20rpx 0;
+          background-color: $bg_color;
+          //background-color:black;
+          position: relative;
+        }
+        .dash-line {
+          height: 8rpx;
+          border-bottom: 2rpx dashed #e8f0f0;
+          //border-bottom: 1rpx dashed black;
+        }
+        .right-border {
+          width: 10rpx;
+          height: 20rpx;
+          border-radius: 20rpx 0 0 20rpx;
+          background-color: $bg_color;
+          //background-color:black;
+          position: relative;
+        }
+      }
+      /*底部*/
+      .coupon-info-bottom {
+        padding: 0px 40rpx 10rpx;
+        height: 50rpx;
+        .time-text {
+          line-height: 50rpx;
+          height: 50rpx;
+          font-size: 22rpx;
+          color: #9ba8a9;
+          display: block;
+        }
+      }
+      /*图片*/
+      .pass-img-wrap,.used-img-wrap {
+        position: absolute;
+        bottom: 0px;
+        right: 20rpx;
+        display: none;
+        .img {
+          width: 110rpx;
+          height: 98rpx;
+          display: block;
+        }
+      }
+    }
+    //优惠券状态样式
+    .coupon-info-wrap-no-available {
+      .coupon-info-top {
+        .top-part {
+          .left-part {
+            .title {
+              color: #9ba8a9;
+            }
+          }
+          .right-part {
+            .price-tips {
+              color: #9ba8a9;
+            }
+            .price {
+              color: #9ba8a9;
+            }
+          }
+        }
+        .bottom-part {
+          .left-part {
+            .text-tips {
+              color: #9ba8a9;
+            }
+          }
+          .right-part {
+            .text-tips {
+              color: #9ba8a9;
+            }
+          }
+        }
+      }
+      .used-img-wrap {
+        display: block;
+      }
+      .pass-img-wrap {
+        display: block;
+      }
+    }
+  }
+  /*没有数据*/
+  .empty-wrap {
+    position: relative;
+    top: 180rpx;
+    .empty-img {
+      .img {
+        width: 160rpx;
+        height: 130rpx;
+        display: block;
+      }
+    }
+    .empty-text {
+      margin-top: 16rpx;
+      font-size: 28rpx;
+      color: #9ba8a9;
+      text-align: center;
+    }
+  }
+  /*底部按钮*/
+  .bottom-btn-wrap {
+    position: fixed;
+    bottom: 0px;
+    height: 98rpx;
+    background-color: #fff;
+    box-shadow: 0 1rpx 20rpx #ddd;
+    width: 100%;
+    .btn-icon {
+      margin-right: 12rpx;
+      .img {
+        width: 40rpx;
+        height: 40rpx;
+      }
+    }
+    .btn-text {
+      color: #707777;
+      font-size: 30rpx;
+    }
+  }
+  .site-view {
+    width: 100%;
+    height: 58rpx;
+  }
+  /*弹框*/
+  .layer-fade {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.6;
+    background: #000;
+    z-index: 3;
+  }
+  .layer-wrap {
+    z-index: 4;
+    .layer-box {
+      width: 630rpx;
+      //height: 378rpx;
+      background-color: #fff;
+      border-radius: 10rpx;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate3d(-50%,-50%,0);
+      backface-visibility: hidden;
+      transition: 0.2s;
+      .layer-top {
+        height: 70rpx;
+        .img {
+          position: relative;
+          top: -70rpx;
+          width: 192rpx;
+          height: 142rpx;
+          display: block;
+        }
+      }
+      .layer-input {
+        margin-top: 28rpx;
+        .layer-text {
+          font-size: 24rpx;
+          color: #9ba8a9;
+        }
+        .layer-input-info {
+          margin-top: 26rpx;
+          background-color: #f7f9f9;
+          border-radius: 10rpx;
+          width: 502rpx;
+          height: 90rpx;
+          text-align: center;
+          color: #364242;
+          font-size: 28rpx;
+          padding: 0px 20rpx;
+        }
+      }
+      .layer-btn {
+        margin-top: 30rpx;
+        border-top: 1rpx solid #e8f0f0;
+        .btn-common {
+          height: 100rpx;
+          line-height: 100rpx;
+          text-align: center;
+          font-size: 30rpx;
+          color: #707777;
+          width: 315rpx;
+        }
+        .btn-left {
+          border-right: 1rpx solid #e8f0f0;
+          width: 314rpx;
+        }
+      }
+    }
+  }
+
+}

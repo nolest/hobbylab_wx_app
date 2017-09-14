@@ -1,0 +1,60 @@
+<!--pages/cart2/cart2.wxml-->
+<view class="ds-flex flex-v pagemain">
+  <scroll-view class="scroll {{ cart_null?'fn-hide':'' }}" scroll-y="true" style="height: {{window.windowHeight - 50}}px;" bindscrolltolower="index_bot">
+    <view class="ds-flex pack-center align-center scan" bindtap="scan">
+      <image src="/image/index/loc_32x26.png" style="width:32rpx;height:26rpx;margin-right:12rpx;"></image>
+      <view class="fonts">{{ desk }}</view>
+    </view>
+    <view class="ds-flex flex-v seller" wx:for="{{ list }}">
+      <!--view class="empty"></view-->
+      <view class="ds-flex align-center tit" data-uid="{{ item.user_id }}">
+        <image src="/image/cart/cart_32x32.png" style="width:32rpx;height:32rpx;margin-right:20rpx"></image>
+        <view class="user_name">{{ item.user_name }}</view>
+      </view>
+      <view class="ds-flex {{ innerItem.quantity > 0?'':'fn-hide'}} slide  " wx:for="{{ item.goods }}" wx:for-index="idx" wx:for-item="innerItem" catchtap="go_to_details" data-goodsid="{{innerItem.goods_id}}" bindtouchstart="move_start" bindtouchend="move_end"
+        data-idx="{{idx}}" data-index="{{index}}">
+        <view class="ds-flex innerItem {{ innerItem.show_deletes?'move':''}}" style="width:{{window.windowWidth}}px;">
+          <view class="img_con">
+            <image src="{{innerItem.image}}" style="width:140rpx;height:140rpx;border-radius:8rpx;"></image>
+          </view>
+          <view class="ds-flex flex-1 flex-v pack-between info_con">
+            <view class="info_title">{{innerItem.title}}</view>
+            <view class="info_num">规格:{{innerItem.standard_name}}</view>
+            <view class="ds-flex pack-between info">
+              <view class="ds-flex align-center price">
+                <view class="ds-flex ico">￥</view>
+                <view class="">{{innerItem.price}}</view>
+              </view>
+              <view class="ds-flex control" catchtap="nothing">
+                <view class="ds-flex flex-1 align-center controls des" catchtap="cart" data-con="des" data-tid="{{innerItem.type_id}}" data-cid="{{innerItem.classify_id}}" data-sid="{{innerItem.standard_id}}" data-gid="{{innerItem.goods_id}}" data-findex="{{ index }}"
+                  data-cindex="{{idx}}">
+                  <image src="/image/goods_list/des_42x42.png" style="width:42rpx;height:42rpx;"></image>
+                </view>
+                <view class="ds-flex pack-center align-center nums" catchtap="nothing">{{innerItem.quantity}}</view>
+                <view class="ds-flex flex-1 pack-end align-center controls plus" catchtap="cart" data-con="plus" data-tid="{{innerItem.type_id}}" data-cid="{{innerItem.classify_id}}" data-sid="{{innerItem.standard_id}}" data-gid="{{innerItem.goods_id}}" data-findex="{{ index }}"
+                  data-cindex="{{idx}}">
+                  <image src="/image/goods_list/plus_42x42.png" style="width:42rpx;height:42rpx;"></image>
+                </view>
+              </view>
+            </view>
+          </view>
+          <view class="ds-flex pack-center align-center deletes " bindtap="deletes" data-tid="{{innerItem.type_id}}" data-cid="{{innerItem.classify_id}}" data-sid="{{innerItem.standard_id}}" data-gid="{{innerItem.goods_id}}" data-findex="{{ index }}" data-cindex="{{idx}}">删除</view>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+  <view class="ds-flex flex-v pack-center align-center emt_con {{ cart_null?'':'fn-hide' }}" style="height: {{window.windowHeight -48.5}}px;">
+    <image src="/image/cart/cart_240x240.png" style="width:240rpx;height:240rpx"></image>
+    <view class="ds-flex pack-center align-center emt_info">购物车空空如也，来下个单呗</view>
+  </view>
+  <view class="ds-flex bar pack-between align-center {{ cart_null?'fn-hide':'' }}">
+    <view class="ds-flex l_con align-center">
+      <view class="notice">实付款</view>
+      <view class="ds-flex price">
+        <view class="ds-flex align-center ico">￥</view>
+        <view class="p">{{ total_amount }}</view>
+      </view>
+    </view>
+    <view class="ds-flex pack-center align-center choosen" bindtap="choosen">结算</view>
+  </view>
+</view>

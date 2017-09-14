@@ -1,0 +1,251 @@
+/**index.wxss**/
+.pagemain {
+  overflow: hidden; }
+  .pagemain .banner {
+    height: 80px;
+    font-size: 36rpx;
+    font-weight: 600;
+    color: #fff; }
+    .pagemain .banner .l {
+      padding-left: 70rpx; }
+      .pagemain .banner .l .l_1 {
+        color: #364242;
+        font-size: 36rpx;
+        margin-bottom: 6rpx; }
+      .pagemain .banner .l .l_2 {
+        color: #707777;
+        font-size: 24rpx;
+        margin-top: 6rpx;
+        font-weight: auto; }
+    .pagemain .banner .ban_con {
+      padding-right: 84rpx;
+      font-size: 0px;
+      overflow: hidden; }
+  .pagemain .body_contain {
+    font-size: 28rpx; }
+    .pagemain .body_contain .sec_type {
+      background: #f7f9f9;
+      width: 180rpx; }
+      .pagemain .body_contain .sec_type .sec_item {
+        padding-left: 24rpx;
+        width: 90px;
+        height: 58px;
+        color: #9ba8a9; }
+        .pagemain .body_contain .sec_type .sec_item .t {
+          max-height: 64rpx;
+          overflow: hidden; }
+        .pagemain .body_contain .sec_type .sec_item.cur {
+          color: #707777;
+          background: #fff;
+          padding-left: 24rpx;
+          font-weight: 600; }
+        .pagemain .body_contain .sec_type .sec_item .red {
+          color: #fff;
+          border-radius: 50%;
+          padding: 4rpx 4rpx;
+          min-width: 20rpx;
+          text-align: center;
+          background: red;
+          font-size: 20rpx; }
+    .pagemain .body_contain .thr_type .thr_title {
+      height: 100rpx;
+      padding-left: 34rpx;
+      font-size: 24rpx;
+      color: #616b6b;
+      font-weight: 600;
+      margin-bottom: 4rpx; }
+      .pagemain .body_contain .thr_type .thr_title .y {
+        height: 22rpx;
+        width: 6rpx;
+        background: #ffd100;
+        margin-right: 14rpx; }
+    .pagemain .body_contain .thr_type .innerItem {
+      min-height: 168rpx;
+      border-bottom: 1rpx solid #e8f0f0;
+      margin-left: 17px;
+      margin-bottom: 15px; }
+      .pagemain .body_contain .thr_type .innerItem:last-child {
+        border-bottom: none; }
+      .pagemain .body_contain .thr_type .innerItem .img_con {
+        font-size: 0rpx;
+        margin-right: 28rpx; }
+      .pagemain .body_contain .thr_type .innerItem .info_con .info_title {
+        font-size: 30rpx;
+        color: #364242;
+        font-weight: 600;
+        padding-right: 24rpx;
+        word-break: break-all; }
+      .pagemain .body_contain .thr_type .innerItem .info_con .info_num {
+        font-size: 22rpx;
+        color: #9ba8a9; }
+      .pagemain .body_contain .thr_type .innerItem .info_con .info {
+        height: 90rpx;
+        padding-bottom: 3px; }
+        .pagemain .body_contain .thr_type .innerItem .info_con .info .price {
+          color: #707777;
+          font-size: 28rpx; }
+          .pagemain .body_contain .thr_type .innerItem .info_con .info .price .ico {
+            margin-top: 4rpx;
+            font-size: 20rpx; }
+        .pagemain .body_contain .thr_type .innerItem .info_con .info .control {
+          padding-right: 30rpx;
+          width: 150rpx;
+          position: relative; }
+          .pagemain .body_contain .thr_type .innerItem .info_con .info .control .controls {
+            font-size: 0rpx; }
+          .pagemain .body_contain .thr_type .innerItem .info_con .info .control .nums {
+            font-size: 30rpx;
+            color: #616b6b; }
+          .pagemain .body_contain .thr_type .innerItem .info_con .info .control .g {
+            position: absolute;
+            right: 20rpx;
+            top: 12rpx;
+            height: 28rpx;
+            border-radius: 8px;
+            background: #f74b4b;
+            color: #fff;
+            font-size: 18rpx;
+            padding: 0rpx 11rpx; }
+          .pagemain .body_contain .thr_type .innerItem .info_con .info .control .standard {
+            width: 90rpx;
+            height: 40rpx;
+            background: #31d4da;
+            color: #fff;
+            font-size: 20rpx;
+            border-radius: 20rpx; }
+    .pagemain .body_contain .thr_type .emt_con image {
+      margin-bottom: 10rpx; }
+    .pagemain .body_contain .thr_type .emt_con view {
+      font-size: 30rpx;
+      color: #9ba8a9; }
+  .pagemain .bar {
+    z-index: 100;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: #fff;
+    height: 50px;
+    box-shadow: 0px 0px 3px 3px rgba(170, 170, 170, 0.1); }
+    .pagemain .bar .cart {
+      position: relative;
+      padding-left: 15px; }
+      .pagemain .bar .cart .cart_icon {
+        position: relative;
+        top: 0px;
+        z-index: 100;
+        background: #fff;
+        width: 60px;
+        height: 60px;
+        border-radius: 30px;
+        box-shadow: 0px -3px 3px 0px rgba(170, 170, 170, 0.1); }
+      .pagemain .bar .cart .num {
+        height: 14px;
+        border-radius: 8px;
+        background: #f74b4b;
+        color: #fff;
+        font-size: 9px;
+        position: relative;
+        left: -10px;
+        z-index: 101;
+        padding: 0rpx 11rpx; }
+      .pagemain .bar .cart .e {
+        width: 15px;
+        height: 15px; }
+      .pagemain .bar .cart .price {
+        color: #364242;
+        font-size: 18px;
+        font-weight: 600; }
+    .pagemain .bar .choosen {
+      margin-right: 15px;
+      width: 140px;
+      height: 38px;
+      background: -webkit-linear-gradient(left, #58cbdc 0%, #01d9d6 100%);
+      color: #fff;
+      border-radius: 19px;
+      font-size: 15px; }
+      .pagemain .bar .choosen.un {
+        background: #cccccc; }
+  .pagemain .standard_fade {
+    transition: background-color 0.4s,transform 0.2s;
+    transform: scale(0, 0);
+    background-color: transparent;
+    position: fixed;
+    top: 0px;
+    z-index: 10000;
+    background: rgba(0, 0, 0, 0.6); }
+    .pagemain .standard_fade.now {
+      transform: scale(1, 1);
+      background-color: rgba(0, 0, 0, 0.6); }
+    .pagemain .standard_fade .pannel {
+      background: #fff;
+      border-radius: 8rpx 8rpx 0px 0px; }
+    .pagemain .standard_fade .mode_window {
+      background: #fff;
+      border-radius: 4px;
+      overflow: hidden;
+      text-align: center; }
+      .pagemain .standard_fade .mode_window .top {
+        font-size: 34rpx;
+        font-weight: 600;
+        color: #364242;
+        min-height: 110rpx; }
+        .pagemain .standard_fade .mode_window .top .img_con {
+          font-size: 0;
+          padding: 40rpx; }
+        .pagemain .standard_fade .mode_window .top .in_title {
+          max-height: 38rpx;
+          overflow: hidden;
+          word-break: break-all; }
+      .pagemain .standard_fade .mode_window .middle {
+        padding: 0rpx 40rpx; }
+        .pagemain .standard_fade .mode_window .middle .rule {
+          color: #707777;
+          font-size: 24rpx; }
+        .pagemain .standard_fade .mode_window .middle .stand_con {
+          padding: 20rpx 0rpx;
+          margin-bottom: 20rpx; }
+          .pagemain .standard_fade .mode_window .middle .stand_con .stands {
+            margin-bottom: 20rpx;
+            min-width: 54rpx;
+            padding: 6rpx 26rpx;
+            border: 2rpx solid #d3d8d8;
+            font-size: 26rpx;
+            margin-right: 30rpx;
+            border-radius: 60rpx;
+            color: #9ba8a9;
+            background: #f7f8f8; }
+            .pagemain .standard_fade .mode_window .middle .stand_con .stands.no {
+              background: #f7f8f8;
+              border: 2rpx solid #d3d8d8;
+              color: #d3d8d8; }
+            .pagemain .standard_fade .mode_window .middle .stand_con .stands.cur {
+              background: #daf7f8;
+              color: #31d4da;
+              border: 2rpx solid #31d4da; }
+      .pagemain .standard_fade .mode_window .bot {
+        height: 109rpx;
+        padding-left: 40rpx;
+        border-top: 1rpx solid #e8f0f0; }
+        .pagemain .standard_fade .mode_window .bot .price {
+          font-weight: 600;
+          color: #707777; }
+          .pagemain .standard_fade .mode_window .bot .price .ico {
+            font-size: 28rpx; }
+          .pagemain .standard_fade .mode_window .bot .price .p {
+            font-size: 38rpx; }
+        .pagemain .standard_fade .mode_window .bot .control {
+          padding-right: 30rpx;
+          width: 150rpx;
+          position: relative; }
+          .pagemain .standard_fade .mode_window .bot .control .controls {
+            font-size: 0rpx; }
+          .pagemain .standard_fade .mode_window .bot .control .nums {
+            font-size: 30rpx;
+            color: #616b6b; }
+          .pagemain .standard_fade .mode_window .bot .control .standard {
+            width: 90rpx;
+            height: 40rpx;
+            background: #31d4da;
+            color: #fff;
+            font-size: 20rpx;
+            border-radius: 20rpx; }

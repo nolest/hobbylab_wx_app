@@ -1,0 +1,124 @@
+.pagemain .scan {
+  background: #f7f9f9;
+  text-align: center;
+  height: 80rpx;
+  font-size: 0; }
+  .pagemain .scan .fonts {
+    color: #9ba8a9;
+    font-size: 26rpx; }
+
+.pagemain .empty {
+  background: #f7f9f9;
+  height: 20rpx; }
+
+.pagemain .emt_con {
+  font-size: 0px;
+  margin-bottom: 10rpx; }
+
+.pagemain .emt_info {
+  color: #9ba8a9;
+  font-size: 30rpx; }
+
+.pagemain .seller:last-child {
+  margin-bottom: 50px; }
+
+.pagemain .seller .tit {
+  margin-top: 30rpx;
+  height: 50rpx;
+  padding: 0rpx 40rpx; }
+  .pagemain .seller .tit .user_name {
+    font-weight: 600;
+    color: #707777;
+    font-size: 28rpx; }
+
+.pagemain .seller .innerItem {
+  min-height: 140rpx;
+  border-bottom: 1rpx solid #e8f0f0;
+  margin: 30rpx 0rpx 0rpx 40rpx;
+  padding-bottom: 30rpx;
+  position: relative;
+  left: 0;
+  transition: left 0.2s; }
+  .pagemain .seller .innerItem.move {
+    position: relative;
+    left: -128rpx;
+    transition: left 0.2s; }
+  .pagemain .seller .innerItem:last-child {
+    border-bottom: 0rpx; }
+  .pagemain .seller .innerItem .img_con {
+    font-size: 0rpx;
+    margin-right: 28rpx; }
+  .pagemain .seller .innerItem .info_con .info_title {
+    font-size: 30rpx;
+    color: #364242;
+    font-weight: 600;
+    margin-bottom: 10rpx;
+    padding-right: 24rpx;
+    word-break: break-all; }
+  .pagemain .seller .innerItem .info_con .info_num {
+    font-size: 22rpx;
+    color: #9ba8a9; }
+  .pagemain .seller .innerItem .info_con .info {
+    padding-bottom: 3px; }
+    .pagemain .seller .innerItem .info_con .info .price {
+      color: #707777;
+      font-size: 28rpx; }
+      .pagemain .seller .innerItem .info_con .info .price .ico {
+        margin-top: 4rpx;
+        font-size: 20rpx; }
+    .pagemain .seller .innerItem .info_con .info .control {
+      padding-right: 40rpx;
+      width: 150rpx; }
+      .pagemain .seller .innerItem .info_con .info .control .controls {
+        font-size: 0rpx; }
+      .pagemain .seller .innerItem .info_con .info .control .nums {
+        font-size: 30rpx;
+        color: #616b6b; }
+      .pagemain .seller .innerItem .info_con .info .control .g {
+        margin-right: 10px;
+        font-size: 30rpx;
+        color: #616b6b; }
+      .pagemain .seller .innerItem .info_con .info .control .standard {
+        width: 90rpx;
+        height: 40rpx;
+        background: #31d4da;
+        color: #fff;
+        font-size: 20rpx;
+        border-radius: 20rpx; }
+
+.pagemain .seller .slide {
+  position: relative;
+  overflow: hidden; }
+  .pagemain .seller .slide .deletes {
+    position: absolute;
+    right: -132rpx;
+    top: 0px;
+    width: 132rpx;
+    background: #ff5959;
+    color: #fff;
+    height: 100%; }
+
+.pagemain .bar {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+  background: #f7f9f9; }
+  .pagemain .bar .l_con {
+    padding-left: 20px; }
+    .pagemain .bar .l_con .notice {
+      font-size: 15px;
+      color: #707777; }
+    .pagemain .bar .l_con .price {
+      color: #364242;
+      font-size: 15px; }
+      .pagemain .bar .l_con .price .p {
+        font-size: 18px; }
+  .pagemain .bar .choosen {
+    margin-right: 15px;
+    width: 140px;
+    height: 38px;
+    background: -webkit-linear-gradient(left, #58cbdc 0%, #01d9d6 100%);
+    color: #fff;
+    border-radius: 19px;
+    font-size: 15px; }

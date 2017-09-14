@@ -1,0 +1,50 @@
+{
+  "pages":[
+    
+    "pages/index/index",
+    "pages/paid/paid",
+    "pages/goods_list/goods_list",
+    "pages/goods_list_big/goods_list_big",
+    "pages/goods_details/goods_details",
+    "pages/cart/cart",
+    "pages/cart2/cart2",
+    "pages/submit_order/submit_order",
+    "pages/order_list/order_list",
+    "pages/comment/comment",
+    "pages/comment_list/comment_list",
+    "pages/store/store",
+    "pages/coupon/coupon",
+    "pages/mine/mine",
+    "pages/mine_edit/mine_edit",
+    "pages/demo/demo"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTextStyle":"black"
+   },
+  "tabBar": {
+    "color" : "#c3e0e1",
+    "selectedColor": "#4ecddb",
+    "borderStyle" : "white",
+    "backgroundColor" : "#fff",
+    "list": [
+      {
+      "pagePath": "pages/index/index",
+      "iconPath":"image/ui/bar_1_52x52.png",
+      "selectedIconPath":"image/ui/bar_1_52x52_cur.png",
+      "text": "探索"
+    },{
+      "pagePath": "pages/cart/cart",
+      "iconPath":"image/ui/bar_2_52x52.png",
+      "selectedIconPath":"image/ui/bar_2_52x52_cur.png",
+      "text": "购物车"
+    },{
+      "pagePath": "pages/mine/mine",
+      "iconPath":"image/ui/bar_4_52x52.png",
+      "selectedIconPath":"image/ui/bar_4_52x52_cur.png",
+      "text": "我的"
+    }
+    ]
+  }
+}

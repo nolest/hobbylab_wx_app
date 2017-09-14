@@ -1,0 +1,190 @@
+<!--pages/submit_order/submit_order.wxml-->
+<view class="ds-flex flex-v pagemain">
+  <scroll-view class="{{ cart_null?'fn-hide':'' }}" scroll-y="true" style="height: {{window.windowHeight-50}}px;" bindscrolltolower="index_bot">
+    <view class="ds-flex pack-center align-center char">
+      <image src="/image/submit_order/loc_32x26.png" style="width:32rpx;height:26rpx;margin-right:12rpx;"></image>
+      <view class="fonts">{{ desk }}</view>
+    </view>
+    <view class="ds-flex flex-v seller" wx:for="{{ list }}">
+      <view class="ds-flex align-center in_title">
+        <image src="/image/submit_order/cart_32x32.png" style="width:32rpx;height:32rpx;margin-right:20rpx;"></image>
+        <view>{{item.user_name}}</view>
+      </view>
+      <view class="ds-flex flex-v pack-between body_title">
+        <view class="ds-flex info_con pack-between align-center" wx:for="{{item.goods}}" wx:for-index="idx" wx:for-item="innerItem">
+          <view class="ds-flex flex-v flex-1">
+            <view class="ds-flex name">{{innerItem.title}}</view>
+            <view class="ds-flex standard">{{innerItem.standard_name}}</view>
+          </view>
+          <view class="ds-flex flex-between info">
+            <view class="num">x{{innerItem.quantity}}</view>
+            <view class="ds-flex align-center pack-end price">
+              <view class="ds-flex ico align-center">￥</view>
+              <view class="p">{{innerItem.price}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="ds-flex pack-between align-center body_middle {{ item.coupon_list.length == 0?'fn-hide':'' }}" wx:if="{{ !item.coupon.coupon_sn }}" data-lindex="{{index}}" bindtap="pre_set_coupon_list" data-csn="{{item.coupon.coupon_sn}}" data-clist="{{ item.coupon_list }}">
+        <view class="ds-flex">
+          <view class="t">店铺优惠</view>
+        </view>
+        <view class="ds-flex align-center">
+          <view class="d">不使用</view>
+          <view class="ds-flex" style="font-size:0;">
+            <image src="/image/submit_order/more_20x20.png" style="margin-left:12rpx;width:20rpx;height:20rpx;"></image>
+          </view>
+        </view>
+      </view>
+      <view wx:else class="ds-flex pack-between align-center body_middle {{ item.coupon_list.length == 0?'fn-hide':'' }}" data-lindex="{{index}}" bindtap="pre_set_coupon_list" data-csn="{{item.coupon.coupon_sn}}" data-clist="{{ item.coupon_list }}">
+        <view class="ds-flex">
+          <view class="t">店铺优惠</view>
+        </view>
+        <view class="ds-flex align-center">
+          <view class="d">{{ item.coupon.price_note }}：</view>
+          <view class="d">{{ item.coupon.name }}</view>
+          <view class="ds-flex" style="font-size:0;">
+            <image src="/image/submit_order/more_20x20.png" style="margin-left:12rpx;width:20rpx;height:20rpx;"></image>
+          </view>
+        </view>
+      </view>
+      <view class="ds-flex pack-end  align-center end_title">
+        <view class="q">共计</view>
+        <view class="q">{{ item.goods_num }}</view>
+        <view class="q">件商品</view>
+        <view class="l">合计金额：</view>
+        <view class="ds-flex align-center m">￥</view>
+        <view class="r">{{item.pending_amount}}</view>
+      </view>
+      <view class="emt"></view>
+    </view>
+
+
+    <view class="ds-flex coupon_con fn-hide" wx:if="{{ coupon.length == 0}}"></view>
+    <view class="ds-flex coupon_con fn-hide" bindtap="pre_set_outer_coupon_list" data-csn="{{ coupon.coupon_sn }}" data-clist="{{ coupon_list }}" wx:else>
+      <view class="ds-flex flex-1 align-center pack-between coupon_in">
+        <view class="t">优惠券</view>
+        <view class="ds-flex">
+          <view class="d">{{ coupon.price_note }}</view>
+          <view class="ds-flex align-center" style="font-size:0;">
+            <image src="/image/submit_order/more_20x20.png" style="margin-left:12rpx;width:20rpx;height:20rpx;"></image>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <view class="ds-flex card_con" wx:if="{{ card_info.length == 0}}"></view>
+    <view class="ds-flex card_con" wx:else>
+      <view class="ds-flex flex-1 align-center pack-between card_in">
+        <view class="ds-flex flex-v t">
+          <view class="x">会员卡（{{ card_info.discount_name }}）</view>
+          <view class="y">会员卡和优惠券不可共用</view>
+        </view>
+        <view wx:if="{{ is_allow_mcard == '1' }}">
+          <switch checked="{{ switches }}" bindchange="switch1Change" type="switch" color="#febf27" />
+        </view>
+      </view>
+    </view>
+
+    <view class="emt_o"></view>
+
+    <view class="ds-flex flex-v bill_con">
+      <view class="ds-flex pack-between align-center bill" wx:for="{{ bill }}">
+        <view class="ds-flex t">{{ item.title }}</view>
+        <view class="ds-flex">
+          <view class="ds-flex align-center m">￥</view>
+          <view class="v">{{ item.value }}</view>
+        </view>
+      </view>
+    </view>
+    <view class="ds-flex" style="height:50px"></view>
+  </scroll-view>
+  <view class="ds-flex flex-v pack-center align-center emt_con {{ cart_null?'':'fn-hide' }}" style="height: {{window.windowHeight-50}}px;">
+    <image src="/image/cart/cart_240x240.png" style="width:240rpx;height:240rpx"></image>
+    <view class="ds-flex pack-center align-center emt_info">购物车空空如也，来下个单呗</view>
+  </view>
+  <view class="ds-flex bar pack-between align-center {{ cart_null?'fn-hide':'' }}">
+    <view class="ds-flex l_con align-center">
+      <view class="notice">实付款</view>
+      <view class="ds-flex price">
+        <view class="ds-flex align-center ico">￥</view>
+        <view class="p">{{ total_amount }}</view>
+      </view>
+    </view>
+    <view class="ds-flex pack-center align-center choosen" bindtap="choosen">微信支付</view>
+  </view>
+  <view class="ds-flex flex-v pack-between pay_success {{ pay_res=='success'?'now':'' }}" style="height:{{ window.windowHeight }}px;width:{{ window.windowWidth }}px">
+    <view class="ds-flex flex-v top">
+      <view class="ds-flex pack-center img_con">
+        <image src="/image/submit_order/su_150x150.png" style="width:150rpx;height:150rpx"></image>
+      </view>
+      <view class="ds-flex pack-center align-self-stretch su">已成功下单，正在为您处理~</view>
+      <view class="ds-flex flex-v align-self-stretch line_con">
+        <view class="ds-flex pack-between line">
+          <view class="l">所在位置：</view>
+          <view class="r">{{submit_ok.seat}}</view>
+        </view>
+        <view class="ds-flex pack-between line">
+          <view class="l">支付方式：</view>
+          <view class="r">{{submit_ok.pay}}</view>
+        </view>
+        <view class="ds-flex pack-between line">
+          <view class="l">实付金额</view>
+          <view class="r">￥{{submit_ok.price}}</view>
+        </view>
+        <view class="ds-flex pack-between line">
+          <view class="l">下单时间：</view>
+          <view class="r">{{submit_ok.time}}</view>
+        </view>
+      </view>
+      <view class="ds-flex align-self-stretch pack-center align-center go_order" bindtap="go_order">查看订单</view>
+      <view class="ds-flex align-self-stretch pack-center go_index" bindtap="go_index">继续探索</view>
+    </view>
+    <view class="ds-flex pack-center align-center bot">
+      <view>爱好研究所</view>
+      <view class="s_line"></view>
+      <view>约约</view>
+    </view>
+  </view>
+  <view class="ds-flex flex-v pack-between pay_fail {{ pay_res=='fail'?'now':'' }}" style="height:{{ window.windowHeight }}px;width:{{ window.windowWidth }}px">
+    <view class="ds-flex flex-v top">
+      <view class="ds-flex pack-center img_con">
+        <image src="/image/submit_order/fa_150x150.png" style="width:150rpx;height:150rpx"></image>
+      </view>
+      <view class="ds-flex pack-center align-self-stretch su">支付未完成~您可以继续支付</view>
+      <view class="ds-flex align-self-stretch pack-center align-center go_order" bindtap="pay_again">再次支付</view>
+      <view class="ds-flex align-self-stretch pack-center go_index" bindtap="go_index">继续探索</view>
+    </view>
+    <view class="ds-flex pack-center align-center bot">
+      <view>爱好研究所</view>
+      <view class="s_line"></view>
+      <view>约约</view>
+    </view>
+  </view>
+
+
+  <view class="ds-flex pack-center align-end standard_fade {{ standard_fade?'now':'fn-hide' }}" style="height:{{ window.windowHeight }}px;width:{{ window.windowWidth }}px">
+    <view class="ds-flex flex-v pack-between mode_window" style="width:{{ window.windowWidth }}px;">
+      <view class="ds-flex pack-center align-center title">店铺优惠</view>
+      <scroll-view scroll-y="true" style="height: 540rpx;">
+        <view class="ds-flex pack-between c_choose align-center" wx:for="{{ list[list_item_index].coupon_list }}" bindtap="cou_list" data-lcsn="{{ item.coupon_sn }}" data-nowsn="{{ list[list_item_index].coupon.coupon_sn }}" data-nowindex="{{index}}">
+          <view class="ds-flex">{{ item.price_note + '：'+ item.name }}</view>
+          <view style="font-size:0">
+            <image wx:if="{{ list[list_item_index].coupon.coupon_sn == item.coupon_sn }}" src="/image/submit_order/choose_cur_36x36.png" style="width:18px;height:18px;"></image>
+            <image wx:else src="/image/submit_order/choose_36x36.png" style="width:18px;height:18px;"></image>
+          </view>
+        </view>
+        <view class="ds-flex pack-between c_choose align-center" bindtap="cou_list" data-lcsn="no" data-nowindex="none">
+          <view class="ds-flex">不使用优惠券</view>
+          <view style="font-size:0">
+            <image wx:if="{{ list[list_item_index].coupon.coupon_sn == undefined }}" src="/image/submit_order/choose_cur_36x36.png" style="width:18px;height:18px;"></image>
+            <image wx:else src="/image/submit_order/choose_36x36.png" style="width:18px;height:18px;"></image>
+          </view>
+        </view>
+      </scroll-view>
+      <view class="ds-flex pack-center align-center close" bindtap="close_choose">关闭</view>
+    </view>
+  </view>
+
+
+</view>

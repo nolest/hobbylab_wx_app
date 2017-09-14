@@ -1,0 +1,64 @@
+
+<!--pages/order_list/order_list.wxml-->
+<view class="ds-flex flex-v pagemain">
+  <view class="ds-flex tap_bar">
+    <view class="ds-flex flex-v flex-1 pack-between align-center el {{cur_tap==index?'now':'' }}" wx:for="{{taps}}" data-index="{{ index }}" bindtap="switchs">
+      <view class="empty"></view>
+      <view class="ds-flex pack-center text">{{item.name}}</view>
+      <view class="border"></view>
+    </view>
+  </view>
+  <!--view style="position:fixed;top:0px;height:1px;width:100%;background:red;z-index:101"></view>
+  <view style="position:fixed;top:100px;height:1px;width:100%;background:red"></view>
+  <view style="position:fixed;top:200px;height:1px;width:100%;background:red"></view>
+  <view style="position:fixed;top:300px;height:1px;width:100%;background:red"></view>
+  <view style="position:fixed;top:400px;height:1px;width:100%;background:red"></view>
+  <view style="position:fixed;top:500px;height:1px;width:100%;background:red"></view>
+  <view style="position:fixed;top:600px;height:1px;width:100%;background:red"></view-->
+  <scroll-view class="ds-flex flex-v scroll" scroll-y="true" style="height: {{window.windowHeight -48}}px;" bindscrolltolower="index_bot" scroll-top="{{scrollTop}}">
+
+      <view class="ds-flex flex-v seller" wx:for="{{ list }}">
+        <view class="ds-flex align-center pack-between in_title" bindtap="go_to_seller" data-sid="{{item.user_id}}">
+          <view class="ds-flex align-center ">
+            <image src="/image/order_list/cart_32x32.png" style="width:32rpx;height:32rpx;margin-right:20rpx;"></image>
+            <view>{{item.user_name}}</view>
+            <image src="/image/order_list/more_20x20.png" style="width:20rpx;height:20rpx;margin-left:16rpx;"></image>
+          </view>
+          <view class="ds-flex align-center slim">
+            {{item.status_str}}
+          </view>
+        </view>
+        <view class="ds-flex flex-v pack-between body_title">
+          <view class="ds-flex info_con pack-between align-center" wx:for="{{item.goods}}" wx:for-index="idx" wx:for-item="innerItem">
+            <view class="ds-flex name">{{innerItem.title}} {{innerItem.standard_name}}</view>
+            <view class="ds-flex flex-between info">
+              <view class="num">x{{innerItem.buy_num}}</view>
+              <view class="ds-flex align-center pack-end price">
+                <view class="ds-flex ico align-center">￥</view>
+                <view class="p">{{innerItem.price}}</view>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class="ds-flex pack-between  align-center end_title">
+          <view class="e">{{item.location}}</view>
+          <view class="ds-flex align-center">
+            <view class="l">合计金额：</view>
+            <view class="ds-flex align-center m" style="margin-top:1px">￥</view>
+            <view class="r">{{ item.pending_amount}}</view>
+          </view>
+        </view>
+        <view class="ds-flex pack-end align-center elimate {{ item.action.length==0?'fn-hide':'' }}">
+          <view class="ds-flex align-center pack-center action" wx:for="{{ item.action }}" wx:for-index="a_idx" wx:for-item="a_item" data-action="{{ a_item.request }}" bindtap="actions" data-ordersn="{{item.order_sn}}">
+            {{ a_item.title }}
+          </view>
+        </view>
+        <view class="emt"></view>
+      </view>
+ 
+    <view class="ds-flex flex-v pack-center align-center emt_con {{ empty_show?'':'fn-hide' }}" style="height: {{window.windowHeight -92.5}}px;">
+      <image src="/image/order_list/order_240x240.png" style="width:240rpx;height:240rpx"></image>
+      <view>您还没有相关的订单，去逛逛有哪些想买的</view>
+    </view>
+  </scroll-view>
+</view>

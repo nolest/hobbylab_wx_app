@@ -1,0 +1,254 @@
+/* pages/goods_list_big/goods_list_big.wxss */
+.pagemain {
+  overflow: hidden; }
+  .pagemain .filter .fi1 {
+    height: 88rpx;
+    border-bottom: 1rpx solid #e8f0f0;
+    font-size: 30rpx;
+    color: #9ba8a9; }
+    .pagemain .filter .fi1 .fi1-options .op-in-top {
+      height: 6rpx;
+      width: 50rpx;
+      background: #fff; }
+    .pagemain .filter .fi1 .fi1-options .op-in-bot {
+      height: 6rpx;
+      width: 50rpx;
+      background: #fff; }
+    .pagemain .filter .fi1 .fi1-options.cur {
+      color: #364242; }
+      .pagemain .filter .fi1 .fi1-options.cur .op-in-bot {
+        background: #ffd100; }
+  .pagemain .filter .fi2 {
+    position: relative;
+    border-bottom: 1rpx solid #edf6f6;
+    height: 96rpx; }
+    .pagemain .filter .fi2 .abs {
+      position: absolute;
+      height: 0px;
+      box-shadow: 3px 3px 3rpx 3rpx rgba(170, 170, 170, 0.1);
+      width: 100%;
+      z-index: 100;
+      bottom: 0px; }
+    .pagemain .filter .fi2 .sw {
+      font-size: 0; }
+    .pagemain .filter .fi2 .fi2-options {
+      margin-left: 24rpx;
+      font-size: 26rpx;
+      height: 30rpx;
+      padding: 9rpx 22rpx;
+      border-radius: 30rpx;
+      min-width: 60rpx;
+      color: #9ba8a9; }
+      .pagemain .filter .fi2 .fi2-options.cur {
+        background: #eafbfb;
+        color: #43d6dc; }
+      .pagemain .filter .fi2 .fi2-options:first-child {
+        margin-left: 40rpx; }
+      .pagemain .filter .fi2 .fi2-options:last-child {
+        margin-right: 40rpx; }
+  .pagemain .roll {
+    position: relative;
+    background: #fff; }
+    .pagemain .roll .abs {
+      position: absolute;
+      height: 100px;
+      background: #faf;
+      box-shadow: 3px 3px 3rpx 3rpx rgba(170, 170, 170, 0.1);
+      width: 100%;
+      z-index: 100; }
+    .pagemain .roll .inner {
+      margin: 30rpx 40rpx 0rpx 40rpx; }
+      .pagemain .roll .inner .img_con {
+        font-size: 0rpx;
+        position: relative; }
+        .pagemain .roll .inner .img_con .over {
+          background: -webkit-linear-gradient(top, transparent 0%, rgba(0, 0, 0, 0.3) 100%);
+          position: absolute;
+          bottom: 0px;
+          left: 0px;
+          height: 40px;
+          font-size: 24rpx;
+          color: #fff; }
+          .pagemain .roll .inner .img_con .over .fs {
+            padding-left: 20rpx;
+            margin-bottom: 10rpx; }
+            .pagemain .roll .inner .img_con .over .fs .s_time {
+              margin-right: 30rpx; }
+      .pagemain .roll .inner .title {
+        margin-top: 20rpx;
+        padding-left: 20rpx;
+        font-size: 30rpx;
+        font-weight: 600;
+        min-height: 50rpx;
+        word-break: break-all;
+        overflow: hidden;
+        color: #364242; }
+      .pagemain .roll .inner .itembot {
+        height: 80rpx; }
+        .pagemain .roll .inner .itembot .price {
+          padding-left: 20rpx;
+          color: #707777;
+          font-size: 30rpx; }
+          .pagemain .roll .inner .itembot .price .price_ico {
+            font-size: 24rpx; }
+        .pagemain .roll .inner .itembot .unchoosable {
+          font-size: 26rpx;
+          color: #9ba8a9; }
+        .pagemain .roll .inner .itembot .control {
+          padding-right: 30rpx;
+          width: 150rpx;
+          height: 100%; }
+          .pagemain .roll .inner .itembot .control .controls {
+            font-size: 0rpx; }
+          .pagemain .roll .inner .itembot .control .nums {
+            font-size: 30rpx;
+            color: #616b6b; }
+          .pagemain .roll .inner .itembot .control .g {
+            margin-right: 10px;
+            font-size: 30rpx;
+            color: #616b6b; }
+          .pagemain .roll .inner .itembot .control .standard {
+            width: 90rpx;
+            height: 40rpx;
+            background: #31d4da;
+            color: #fff;
+            font-size: 20rpx;
+            border-radius: 20rpx; }
+      .pagemain .roll .inner .control {
+        width: 75px; }
+        .pagemain .roll .inner .control .controls {
+          font-size: 0px; }
+        .pagemain .roll .inner .control .nums {
+          font-size: 15px;
+          color: #616b6b; }
+    .pagemain .roll .emt_con image {
+      margin-bottom: 10rpx; }
+    .pagemain .roll .emt_con view {
+      font-size: 30rpx;
+      color: #9ba8a9; }
+  .pagemain .bar {
+    z-index: 100;
+    background: #fff;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    box-shadow: 0px 0px 3px 3px rgba(170, 170, 170, 0.1); }
+    .pagemain .bar .cart {
+      position: relative;
+      padding-left: 15px; }
+      .pagemain .bar .cart .cart_icon {
+        position: relative;
+        top: 0px;
+        z-index: 100;
+        background: #fff;
+        width: 60px;
+        height: 60px;
+        border-radius: 30px;
+        box-shadow: 0px -3px 3px 0px rgba(170, 170, 170, 0.1); }
+      .pagemain .bar .cart .num {
+        height: 14px;
+        border-radius: 8px;
+        background: #f74b4b;
+        color: #fff;
+        font-size: 9px;
+        position: relative;
+        left: -10px;
+        z-index: 101;
+        padding: 0rpx 11rpx; }
+      .pagemain .bar .cart .price {
+        color: #364242;
+        font-size: 18px;
+        font-weight: 600; }
+    .pagemain .bar .choosen {
+      margin-right: 15px;
+      width: 140px;
+      height: 38px;
+      background: -webkit-linear-gradient(left, #58cbdc 0%, #01d9d6 100%);
+      color: #fff;
+      border-radius: 19px;
+      font-size: 15px; }
+      .pagemain .bar .choosen.un {
+        background: #cccccc; }
+  .pagemain .standard_fade {
+    transition: background-color 0.4s,transform 0.2s;
+    transform: scale(0, 0);
+    background-color: transparent;
+    position: fixed;
+    top: 0px;
+    z-index: 10000;
+    background: rgba(0, 0, 0, 0.6); }
+    .pagemain .standard_fade.now {
+      transform: scale(1, 1);
+      background-color: rgba(0, 0, 0, 0.6); }
+    .pagemain .standard_fade .pannel {
+      background: #fff;
+      border-radius: 8rpx 8rpx 0px 0px; }
+    .pagemain .standard_fade .mode_window {
+      background: #fff;
+      border-radius: 4px;
+      overflow: hidden;
+      text-align: center; }
+      .pagemain .standard_fade .mode_window .top {
+        font-size: 34rpx;
+        font-weight: 600;
+        color: #364242;
+        min-height: 110rpx; }
+        .pagemain .standard_fade .mode_window .top .img_con {
+          font-size: 0;
+          padding: 40rpx; }
+        .pagemain .standard_fade .mode_window .top .in_title {
+          max-height: 38rpx;
+          overflow: hidden;
+          word-break: break-all; }
+      .pagemain .standard_fade .mode_window .middle {
+        padding: 0rpx 40rpx; }
+        .pagemain .standard_fade .mode_window .middle .rule {
+          color: #707777;
+          font-size: 24rpx; }
+        .pagemain .standard_fade .mode_window .middle .stand_con {
+          padding-top: 20rpx;
+          margin-bottom: 20rpx; }
+          .pagemain .standard_fade .mode_window .middle .stand_con .stands {
+            margin-bottom: 20rpx;
+            min-width: 54rpx;
+            padding: 6rpx 26rpx;
+            border: 2rpx solid #d3d8d8;
+            font-size: 26rpx;
+            margin-right: 30rpx;
+            border-radius: 60rpx;
+            color: #9ba8a9;
+            background: #f7f8f8; }
+            .pagemain .standard_fade .mode_window .middle .stand_con .stands.no {
+              background: #f7f8f8;
+              border: 2rpx solid #d3d8d8;
+              color: #d3d8d8; }
+            .pagemain .standard_fade .mode_window .middle .stand_con .stands.cur {
+              background: #daf7f8;
+              color: #31d4da;
+              border: 2rpx solid #31d4da; }
+      .pagemain .standard_fade .mode_window .bot {
+        height: 109rpx;
+        padding: 0rpx 40rpx;
+        border-top: 1rpx solid #e8f0f0; }
+        .pagemain .standard_fade .mode_window .bot .price {
+          font-weight: 600;
+          color: #707777; }
+          .pagemain .standard_fade .mode_window .bot .price .ico {
+            font-size: 28rpx; }
+          .pagemain .standard_fade .mode_window .bot .price .p {
+            font-size: 38rpx; }
+        .pagemain .standard_fade .mode_window .bot .control {
+          width: 150rpx; }
+          .pagemain .standard_fade .mode_window .bot .control .controls {
+            font-size: 0rpx; }
+          .pagemain .standard_fade .mode_window .bot .control .nums {
+            font-size: 30rpx;
+            color: #616b6b; }
+          .pagemain .standard_fade .mode_window .bot .control .standard {
+            width: 90rpx;
+            height: 40rpx;
+            background: #31d4da;
+            color: #fff;
+            font-size: 20rpx;
+            border-radius: 20rpx; }

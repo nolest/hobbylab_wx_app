@@ -1,0 +1,43 @@
+<!--pages/mine/mine.wxml-->
+<view class="ds-flex flex-v pagemain">
+    <view class="user-info-wrap ds-flex flex-v align-center">
+        <view class="icon-wrap">
+            <image class="img-big" src="{{mine_info.avatar}}"></image>
+            <image class="img-small" src="{{mine_info.level_icon}}"></image>
+        </view>
+        <view class="name-wrap ds-flex pack-center align-center" bindtap="edit_mine_click">
+            <text class="name">{{mine_info.name}}</text>
+            <image class="img-edit" src="../../image/mine/edit-icon-24x24.png"></image>
+        </view>
+        <text class="user-tips">ID：{{mine_info.user_id}}</text>
+    </view>
+    <view class="list-wrap">
+      <view class="info-wrap ds-flex align-center" data-type="order" bindtap="item_click">
+        <view class="img-icon-wrap">
+          <image class="img-icon" src="../../image/mine/order-icon-40x40.png"></image>
+        </view>
+        <text class="info-text flex-1">我的订单</text>
+        <view class="arrow-icon-wrap ds-flex align-center pack-end">
+          <image class="arrow-icon" src="../../image/mine/arrow-icon-12x20.png"></image>
+        </view>  
+      </view>
+      <view class="info-wrap ds-flex align-center" data-type="coupon" bindtap="item_click">
+        <view class="img-icon-wrap">
+          <image class="img-icon" src="../../image/mine/coupon-icon-40x40.png"></image>
+        </view>
+        <text class="info-text flex-1">我的优惠券</text>
+        <view class="arrow-icon-wrap ds-flex align-center pack-end">
+          <image class="arrow-icon" src="../../image/mine/arrow-icon-12x20.png"></image>
+        </view>  
+      </view>
+      <view class="info-wrap ds-flex align-center" data-type="vip" bindtap="item_click">
+        <view class="img-icon-wrap">
+          <image class="img-icon" src="../../image/mine/vip-icon-40x40.png"></image>
+        </view>
+        <text class="info-text flex-1">我的会员卡</text>
+        <view class="arrow-icon-wrap ds-flex align-center pack-end">
+          <image class="arrow-icon" src="../../image/mine/arrow-icon-12x20.png"></image>
+        </view>  
+      </view>
+    </view>
+</view>

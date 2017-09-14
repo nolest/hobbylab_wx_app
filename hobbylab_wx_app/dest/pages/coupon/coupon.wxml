@@ -1,0 +1,101 @@
+<!--pages/coupon/coupon.wxml-->
+<view class="ds-flex flex-v pagemain">
+        <view class="tag-list-wrap ds-flex">
+          <view class="tag-info {{coupon_type == 'available' ? 'tag-info-cur':''}}" data-type="available" bindtap="tag_click">
+              <text class="text ds-flex pack-center">可使用</text>
+              <view class="ds-flex pack-center">
+                  <view class="text-line"></view>
+              </view>
+          </view>
+          <view class="tag-info {{coupon_type == 'used' ? 'tag-info-cur':''}}" data-type="used" bindtap="tag_click">
+              <text class="text ds-flex pack-center">已使用</text>
+              <view class="ds-flex pack-center">
+                  <view class="text-line"></view>
+              </view>
+          </view>
+          <view class="tag-info {{coupon_type == 'expired' ? 'tag-info-cur':''}}" data-type="expired" bindtap="tag_click">
+              <text class="text ds-flex pack-center">已过期</text>
+              <view class="ds-flex pack-center">
+                  <view class="text-line"></view>
+              </view>
+          </view>
+        </view>
+    <scroll-view scroll-y="true" style="height: {{window.windowHeight -90}}px;" bindscrolltolower="get_coupon_list">
+        <view class="coupon-list-wrap" wx:if="{{data_list_show}}">
+            <block wx:for="{{data_list}}" wx:key="unique">
+              <view class="coupon-info-wrap-available {{item.is_expire == '0' && item.is_used == '0' ? '':'coupon-info-wrap-no-available' }}">
+                  <view class="coupon-info-top">
+                      <view class="top-part ds-flex pack-between align-center">
+                          <view class="left-part">
+                              <text class="title">{{item.name}}</text>
+                          </view> 
+                          <view class="right-part" wx:if="{{item.type_id == '1'}}">
+                              <text class="price-tips">￥</text>
+                              <text class="price">{{item.price}}</text>
+                          </view>
+                          <view class="right-part" wx:else>
+                              <text class="price">{{item.discount}}</text>
+                          </view>
+                      </view>
+                      <view class="bottom-part ds-flex pack-between align-center">
+                          <view class="left-part">
+                              <text class="text-tips">{{item.description[2].value}}</text>
+                          </view> 
+                          <!-- <view class="right-part flex-1">
+                              <text class="text-tips">{{item.description[0].value}}</text>
+                          </view>  -->
+                      </view>
+                  </view>
+                  <view class="coupon-info-middle ds-flex">
+                      <view class="left-border"></view>
+                      <view class="dash-line flex-1"></view>
+                      <view class="right-border"></view>
+                  </view>
+                  <view class="coupon-info-bottom">
+                      <text class="time-text">有效日期：{{item.description[1].value}}可用</text>
+                  </view>
+                  <view class="pass-img-wrap" wx:if="{{item.is_expire != '0'}}">
+                      <image class="img" src="../../image/coupon/coupon-icon-pass-110x98.png"></image>
+                  </view>
+                  <view class="used-img-wrap" wx:if="{{item.is_used != '0'}}">
+                      <image class="img" src="../../image/coupon/coupon-icon-used-110x98.png"></image>
+                  </view> 
+              </view>
+            </block>
+        </view>
+        <view class="empty-wrap" wx:if="{{!data_list_show}}">
+            <view class="empty-img ds-flex pack-center">
+                <image class="img" src="../../image/coupon/coupon-no-data-160x130.png"></image>
+            </view>
+            <view class="empty-text">
+                <text>您还没有爱好优惠券</text>
+            </view>
+        </view>
+        <view class="site-view"></view>
+    </scroll-view>
+    <view class="bottom-btn-wrap ds-flex pack-center align-center" bindtap="layer_click">
+        <view class="btn-icon ds-flex align-center">
+            <image class="img" src="../../image/coupon/coupon-btn-40x40.png"></image>
+        </view>
+        <view class="btn-text">
+            <text>兑换优惠券</text>
+        </view>
+    </view>
+    <view class="layer-fade" wx:if="{{data_layer_show}}" bindtap="cancel_layer_click"></view>
+    <view class="layer-wrap" wx:if="{{data_layer_show}}">
+        <view class="layer-box">
+            <view class="layer-top ds-flex pack-center">
+              <image class="img" src="../../image/coupon/coupon-exchange-192x142.png"></image>
+            </view>
+            <view class="layer-input ds-flex flex-v align-center">
+                <text class="layer-text">请输入您的优惠券兑换码</text>
+                <input class="layer-input-info" bindinput="coupon_sn_input" value="{{coupon_sn}}"/>
+            </view>
+            <view class="layer-btn ds-flex">
+                <view class="btn-common btn-left" bindtap="cancel_layer_click">取消</view>
+                <view class="btn-common" bindtap="exchange_coupon_submit">确定</view>
+            </view>
+        </view>
+    </view>
+    
+</view>

@@ -1,0 +1,25 @@
+<!--pages/mine_edit/mine_edit.wxml-->
+<view class="ds-flex flex-v pagemain">
+    <view class="list-wrap">
+      <view class="info-wrap ds-flex align-center pack-between" bindtap="change_avatar">
+          <text class="left-info">头像</text>
+          <view class="right-info ds-flex align-center">
+            <image class="info-icon" src="{{mine_info.avatar}}"></image>
+            <image class="arrow-icon" src="../../image/mine/arrow-icon-12x20.png"></image>
+          </view>
+      </view>
+      <view class="info-wrap ds-flex align-center pack-between">
+          <text class="left-info">名字</text>
+          <view class="right-info flex-1 right-info-name">
+            <input class="input-tips" placeholder="请填入名字" value="{{mine_info.name}}" bindinput="name_input"/>
+          </view>
+      </view>
+      <view class="info-wrap ds-flex align-center pack-between">
+          <text class="left-info">ID</text>
+          <view class="right-info">
+            <text class="text-tips">{{mine_info.user_id}}</text>
+          </view>
+      </view>
+    </view>
+    <view class="btn-wrap" bindtap="submit_data">保存</view>
+</view>

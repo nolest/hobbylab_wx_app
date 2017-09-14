@@ -1,0 +1,62 @@
+<!--pages/store/store.wxml-->
+<import src="../../utils/wxParse_v2/wxParse.wxml"/>
+<view class="ds-flex flex-v pagemain">
+    <scroll-view scroll-y="true" style="height: {{window.windowHeight}}px;" bindscrolltolower="get_goods_list">
+        <swiper class="swiper-wrap" indicator-dots="true" autoplay="true" interval="3500" duration="800" indicator-color="#eeeef0" indicator-active-color="#ffd100" style="height:{{ window.windowWidth/3*2 }}px;">
+            <block wx:for="{{ seller_info.cover }}">
+                <swiper-item>
+                <image src="{{ item }}" class="slide-image" mode="aspectFill" style="height:{{ window.windowWidth/3*2 }}px;width:{{ window.windowWidth }}px"/>
+                </swiper-item>
+            </block>
+        </swiper>
+        <view class="name-wrap ds-flex flex-v">
+            <view class="name-part ds-flex pack-between align-center">
+                <view class="name-tips ds-flex flex-v flex-1">
+                    <view class="name">{{ seller_info.name }}</view>
+                    <view class="address" wx:for="{{ seller_info.store }}">地址：{{ item.address }}</view>
+                </view>
+                <view class="sell-tips ds-flex pack-between align-center">
+                    <view class="line-tips"></view>
+                    <view class="text-tips ds-flex flex-v align-center">
+                        <view class="sell-name">月售</view>
+                        <view class="sell-num">{{ seller_info.trade_num }}</view>
+                    </view>
+                </view>
+            </view>
+            <view class="nickname-part ds-flex"> 
+                <view class="nick-name ds-flex wrap-wp">
+                    <view class="nick-name-item" wx:for="{{ seller_info.professions }}">{{ item.name }}</view>
+                </view>
+            </view>
+        </view>
+        <view class="des-wrap ds-flex flex-v wrap-wp">
+            <view class="des-wrap-title">商家简介</view>
+            <!--<template is="wxParse" data="{{wxParseData:introduce.nodes}}"/>-->
+            <view class="des-wrap-intro">{{ seller_info.introduce }}</view>
+        </view>
+        
+        <view class="goods-wrap ds-flex flex-v" wx:if="{{ goods_list.length>0 }}">
+            <view class="goods-wrap-title">相关商品</view>
+            <view class="goods-wrap-info ds-flex flex-v" wx:for="{{ goods_list }}" data-goods-id="{{ item.goods_id }}" data-stage-id="{{ item.stage_id?item.stage_id:0 }}"bindtap="go_goods_detail">
+                <view class="img-wrap ds-flex">
+                    <image class="goods-img" src="{{ item.image }}" mode="aspectFill"></image>
+                    <view class="sell-tips-wrap">
+                        <view class="sell-tips ds-flex">
+                            <view class="time" wx:if="{{ item.start_time }}">{{ item.start_time }}</view>
+                            <view class="sell-num">{{ item.buy_num }}</view>
+                        </view>
+                    </view>
+                </view>
+                <view class="goods-title">{{ item.title }}</view>
+                <view class="price ds-flex">
+                    <view class="price-start">￥</view>
+                    <view class="price-str">{{ item.price }}</view>
+                    <view class="price-str" wx:if="{{ item.unit }}">{{ item.unit }}</view>
+                </view>
+            </view>
+        </view>
+        <view class="more-wrap ds-flex pack-center">
+            <image class="more-img" src="../../image/store/more-img-284x34.png"></image>
+        </view> 
+    </scroll-view>
+</view>

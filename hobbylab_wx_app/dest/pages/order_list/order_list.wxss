@@ -1,0 +1,98 @@
+/* pages/order_list/order_list.wxss */
+.pagemain {
+  position: relative; }
+  .pagemain .tap_bar {
+    height: 43px;
+    border-bottom: 1px solid #e8f0f0;
+    position: fixed;
+    background: #fff;
+    top: 0px;
+    width: 100%;
+    z-index: 100; }
+    .pagemain .tap_bar .el .empty {
+      height: 6rpx; }
+    .pagemain .tap_bar .el .text {
+      font-size: 30rpx;
+      font-weight: 600;
+      color: #9ba8a9; }
+    .pagemain .tap_bar .el .border {
+      height: 6rpx;
+      width: 50rpx;
+      background: none; }
+    .pagemain .tap_bar .el.now .text {
+      color: #364242; }
+    .pagemain .tap_bar .el.now .border {
+      background: #ffd100; }
+  .pagemain .scroll {
+    margin-top: 44px;
+    background: #f7f9f9; }
+  .pagemain .seller {
+    background: #fff; }
+    .pagemain .seller .in_title {
+      height: 88rpx;
+      border-bottom: 1rpx dotted #e8f0f0;
+      margin: 0rpx 40rpx;
+      color: #707777;
+      font-size: 28rpx;
+      font-weight: 600; }
+      .pagemain .seller .in_title .slim {
+        font-weight: auto;
+        font-size: 26rpx; }
+    .pagemain .seller .body_title {
+      margin: 34rpx 40rpx 0rpx 40rpx;
+      padding-bottom: 10rpx;
+      border-bottom: 1rpx solid #e8f0f0; }
+      .pagemain .seller .body_title .info_con {
+        margin-bottom: 20rpx; }
+        .pagemain .seller .body_title .info_con .name {
+          font-size: 28rpx;
+          color: #364242;
+          font-weight: 600; }
+        .pagemain .seller .body_title .info_con .info {
+          margin-left: 50rpx; }
+          .pagemain .seller .body_title .info_con .info .num {
+            font-size: 24rpx;
+            color: #9ba8a9;
+            margin-top: 2rpx; }
+          .pagemain .seller .body_title .info_con .info .price {
+            min-width: 150rpx; }
+            .pagemain .seller .body_title .info_con .info .price .ico {
+              color: #707777;
+              font-size: 22rpx;
+              margin-top: 2rpx; }
+            .pagemain .seller .body_title .info_con .info .price .p {
+              font-size: 28rpx;
+              color: #707777; }
+    .pagemain .seller .end_title {
+      color: #364242;
+      height: 106rpx;
+      padding: 0rpx 40rpx; }
+      .pagemain .seller .end_title .e {
+        color: #b4bdbe;
+        font-size: 26rpx; }
+      .pagemain .seller .end_title .l {
+        font-size: 26rpx; }
+      .pagemain .seller .end_title .m {
+        font-size: 26rpx; }
+      .pagemain .seller .end_title .r {
+        font-size: 30rpx;
+        font-weight: 600; }
+    .pagemain .seller .elimate {
+      border-top: 1rpx solid #e8f0f0;
+      margin: 0rpx 40rpx; }
+      .pagemain .seller .elimate .action {
+        margin: 30rpx 0rpx;
+        min-width: 196rpx;
+        color: #ffce6a;
+        border: 2rpx solid #ffce6a;
+        height: 56rpx;
+        border-radius: 28rpx;
+        font-size: 26rpx; }
+    .pagemain .seller .emt {
+      height: 20rpx;
+      background: #f7f9f9; }
+  .pagemain .emt_con image {
+    margin-bottom: 16rpx; }
+  .pagemain .emt_con view {
+    font-size: 30rpx;
+    color: #9ba8a9; }

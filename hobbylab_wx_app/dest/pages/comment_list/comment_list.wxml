@@ -1,0 +1,38 @@
+<!--pages/comment_list/comment_list.wxml-->
+<view class="ds-flex flex-v pagemain">
+    <scroll-view scroll-y="true" bindscrolltolower="fetch" style="height: {{window.windowHeight}}px;">
+        <view class="comment-list-wrap">
+            <view class="comment-info-wrap ds-flex pack-between" wx:for="{{ comment_list }}" wx:key="parentUnique" wx:for-item="parentItem">
+                <view class="avatar-wrap">
+                    <image class="avatar" src="{{ parentItem.user.avatar }}"></image>
+                </view>
+                <view class="info-wrap ds-flex flex-v flex-1">
+                    <view class="name-wrap ds-flex pack-between">
+                        <view class="name">{{ parentItem.user.name }}</view>
+                        <view class="time">{{ parentItem.add_time }}</view>
+                    </view>
+                    <view class="level-wrap ds-flex">
+                        <image src="../../image/comment/star-gray-icon-170x22.png" class="level"></image>
+                        <image src="../../image/comment/star-yellow-icon-170x22.png" class="level level-yellow" style="left:-{{ 100-parentItem.rating*20 }}%"></image>
+                    </view>
+                    <view class="comment-wrap ds-flex flex-v">
+                        <view class="content">{{ parentItem.comment }}</view>
+                        <view class="comment-img ds-flex wrap-wp pack-start align-start" wx:if="{{ parentItem.images.length > 0 }}">
+                            <image mode="aspectFill" class="img" src="{{ item.small }}" data-src="{{ item.big }}" wx:key="unique" wx:for="{{ parentItem.images }}" bindtap="previewImg"></image>
+                        </view>
+                    </view>
+                    <view class="reply-wrap ds-flex flex-v" wx:if="{{ parentItem.reply }}">
+                        <view class="seller-reply">商家回复：</view>
+                        <view class="content">{{ parentItem.reply }}</view>
+                    </view>
+                    <!--<view class="reply-wrap ds-flex flex-v">
+                        <view class="seller-reply">商家回复：</view>
+                        <view class="content">我是商家回复测试的内容我是商家回复测试的内容我是商家回复测试的内容我是商家回复测试的内容</view>
+                    </view>-->
+                </view>
+            </view>
+        </view>
+        
+        <view class="no-data {{ no_data_class }}" >暂无更多评论</view>    
+    </scroll-view>
+</view>

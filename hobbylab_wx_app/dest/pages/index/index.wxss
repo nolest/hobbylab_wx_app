@@ -1,0 +1,52 @@
+/**index.wxss**/
+.pagemain .scan {
+  text-align: center;
+  height: 76rpx;
+  font-size: 0; }
+  .pagemain .scan .fonts {
+    color: #9ba8a9;
+    font-size: 26rpx; }
+
+.pagemain .type_body {
+  background: #fff;
+  padding: 0px 20rpx; }
+
+.pagemain .inner {
+  height: 236rpx;
+  margin-bottom: 20rpx;
+  border-radius: 8rpx;
+  padding-left: 50rpx; }
+  .pagemain .inner .l .title {
+    font-size: 36rpx;
+    font-weight: 600;
+    margin-bottom: 2rpx;
+    color: #364242; }
+  .pagemain .inner .l .des {
+    font-size: 24rpx;
+    margin-top: 8rpx;
+    color: #707777; }
+  .pagemain .inner .r .num {
+    width: 64rpx; }
+    .pagemain .inner .r .num .red {
+      background: #f74b4b;
+      color: #fff;
+      min-width: 34rpx;
+      text-align: center;
+      font-size: 20rpx;
+      height: 22rpx;
+      padding-top: 6rpx; }
+    .pagemain .inner .r .num .tri {
+      height: 6rpx;
+      background: #f74b4b;
+      border-left: 16rpx solid #f74b4b;
+      border-right: 16rpx solid #f74b4b; }
+  .pagemain .inner .text {
+    height: 200rpx;
+    font-weight: 600;
+    font-size: 48rpx; }
+
+.pagemain .bar {
+  border-top: 2rpx solid #ccc;
+  height: 110rpx; }
+  .pagemain .bar .bar_item {
+    font-size: 24rpx; }

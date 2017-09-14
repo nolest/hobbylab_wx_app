@@ -1,0 +1,32 @@
+<!--pages/index/index.wxml-->
+<view class="ds-flex flex-v pagemain">
+<view class="ds-flex pack-center align-center scan" bindtap="scan">
+    <image src="/image/index/loc_32x26.png" style="width:32rpx;height:26rpx;margin-right:12rpx;"></image>
+    <view class="fonts">{{ desk }}</view>
+</view>
+<!--view style="height:5px; width:100%;border-bottom:1rpx dotted #e8f0f0;"></view>
+<view style="height:5px; width:100%;border-bottom:2rpx dashed #e8f0f0"></view>
+<view style="height:5px; width:100%;border-bottom:1rpx solid #e8f0f0;margin-bottom:5px"></view-->
+
+<view class="ds-flex flex-v type_body">
+    <view class="ds-flex pack-between inner" wx:for="{{list}}" bindtap="nev_to" data-open="{{item.large_showcase}}" data-type="{{item.type_id}}" data-index="{{index}}" style="background:{{item.color}};">
+        <view class="ds-flex flex-v pack-center l">
+            <view class="title">{{ item.title }}</view>
+            <view class="des">{{ item.description }}</view>
+        </view>
+        <view class="ds-flex r">
+            <view class="ds-flex align-end">
+                <image src="{{ item.image }}" style="width:200rpx;height:200rpx;"></image>
+            </view>
+            <view class="ds-flex align-start num">
+                <view class="ds-flex flex-v  {{ item.t_num?'':'fn-hide' }}">
+                    <view class="ds-flex pack-center align-center red">{{ item.t_num }}</view>
+                    <view class="tri" style="border-bottom: 6rpx solid {{item.color}};"></view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+
+
+</view>

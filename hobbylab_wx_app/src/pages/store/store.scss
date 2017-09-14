@@ -1,0 +1,157 @@
+/* pages/store/store.wxss */
+@import "../../utils/wxParse_v2/wxParse.scss";
+page {
+  background: #f7f9f9;
+}
+.pagemain{
+  background: #f7f9f9;
+  .swiper-wrap {
+    height: 500rpx;
+  }
+  .name-wrap {
+    background: #fff;
+    padding: 38rpx 40rpx 0rpx 40rpx;
+    .name-part {
+      .name-tips {
+        margin-right: 50rpx;
+        .name {
+          font-size: 36rpx;
+          color: #364242;
+          font-weight: 600;
+        }
+        .address {
+          font-size: 24rpx;
+          color: #707777;
+          margin-top: 16rpx;
+        }
+      }
+      .sell-tips {
+        color: #707777;
+        width: 99rpx;
+        .line-tips {
+          border-left: 1rpx solid #e8f0f0;
+          height: 56rpx;
+        }
+        .text-tips {
+          .sell-name {
+            font-size: 22rpx;
+          }
+          .sell-num {
+            margin-top: 15rpx;
+            font-size: 26rpx;
+          }
+        }
+      }
+    }
+    .nickname-part {
+      margin-top: 34rpx;
+      padding-bottom: 20rpx;
+      border-bottom: 1rpx solid #f7f9f9;
+      .nick-name {
+        .nick-name-item {
+          color: #9ba8a9;
+          background-color: #f7f9f9;
+          border-radius: 20rpx;
+          margin-right: 20rpx;
+          margin-bottom: 20rpx;
+          padding-left: 30rpx;
+          padding-right: 30rpx;
+          font-size: 22rpx;
+          line-height: 40rpx;
+        }
+      }
+    }
+  }
+  .des-wrap {
+    background: #fff;
+    padding: 48rpx 60rpx 48rpx 40rpx;
+    margin-bottom: 20rpx;
+    .des-wrap-title {
+      font-size: 34rpx;
+      color: #364242;
+      padding-bottom: 36rpx;
+      font-weight: 600;
+    }
+    /*.wxParse-inline {
+      font-size: 28rpx;
+      color: #707777;
+    }
+    .wxParse-img {
+      margin-top: 10rpx;
+    }*/
+    .des-wrap-intro {
+      font-size: 28rpx;
+      color: #707777;
+      min-height: 36rpx;
+      overflow: hidden;
+    }
+  }
+
+  .goods-wrap {
+    background: #fff;
+    padding: 50rpx 40rpx 0 40rpx;
+    .goods-wrap-title {
+      font-size: 34rpx;
+      color: #364242;
+      margin-bottom: 40rpx;
+      font-weight: 600;
+    }
+    .goods-wrap-info {
+      .img-wrap {
+        position: relative;
+        .goods-img {
+          width: 670rpx;
+          height: 445rpx;
+        }
+        .sell-tips-wrap {
+          background: -webkit-linear-gradient(top, transparent 0%, rgba(0, 0, 0, 0.3) 100%);
+          position: absolute;
+          bottom:0;
+          left:0;
+          height:40px;
+          width: 670rpx;
+          .sell-tips {
+            font-size: 24rpx;
+            color: #fff;
+            position: absolute;
+            left: 20rpx;
+            bottom: 14rpx;
+            .time {
+              margin-right:36rpx
+            }
+          }
+        }
+      }
+      .goods-title {
+        padding: 28rpx 20rpx 36rpx;
+        color: #364242;
+        font-size: 30rpx;
+        font-weight: 600;
+      }
+      .price {
+        padding: 0 20rpx 58rpx;
+        color: #707777;
+        font-weight: 600;
+        .price-start {
+          margin-top: 5rpx;
+          font-size: 24rpx;
+        }
+        .price-str {
+          font-size: 30rpx;
+        }
+      }
+
+    }
+
+  }
+  .more-wrap {
+    background: #fff;
+    padding-top: 40rpx;
+    padding-bottom: 40rpx;
+    .more-img {
+      width: 284rpx;
+      height: 34rpx;
+    }
+  }
+
+}

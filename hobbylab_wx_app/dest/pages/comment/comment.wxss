@@ -1,0 +1,123 @@
+/* pages/comment/comment.wxss */
+page {
+  background: #f7f9f9; }
+
+.pagemain {
+  background: #f7f9f9;
+  overflow-y: auto; }
+  .pagemain .container-wrap {
+    margin-bottom: 100rpx; }
+    .pagemain .container-wrap .container-item-wrap {
+      margin-top: 20rpx;
+      background: #fff; }
+      .pagemain .container-wrap .container-item-wrap .info-wrap {
+        margin-left: 40rpx;
+        padding-top: 40rpx;
+        padding-bottom: 40rpx;
+        border-bottom: 1rpx solid #ecf3f3; }
+        .pagemain .container-wrap .container-item-wrap .info-wrap .cover-wrap {
+          padding-right: 30rpx; }
+          .pagemain .container-wrap .container-item-wrap .info-wrap .cover-wrap .img {
+            width: 140rpx;
+            height: 140rpx;
+            border-radius: 8rpx; }
+        .pagemain .container-wrap .container-item-wrap .info-wrap .name-wrap {
+          padding-right: 40rpx;
+          min-height: 70rpx; }
+          .pagemain .container-wrap .container-item-wrap .info-wrap .name-wrap .name-standard .name {
+            font-size: 32rpx;
+            color: #364242;
+            font-weight: 600; }
+          .pagemain .container-wrap .container-item-wrap .info-wrap .name-wrap .name-standard .standard {
+            font-size: 24rpx;
+            color: #707777;
+            margin-top: 12rpx;
+            font-weight: 600; }
+          .pagemain .container-wrap .container-item-wrap .info-wrap .name-wrap .level-wrap {
+            margin-top: 26rpx; }
+            .pagemain .container-wrap .container-item-wrap .info-wrap .name-wrap .level-wrap .level-star {
+              position: relative;
+              width: 260rpx;
+              overflow: hidden; }
+              .pagemain .container-wrap .container-item-wrap .info-wrap .name-wrap .level-wrap .level-star .level {
+                width: 260rpx;
+                height: 36rpx; }
+              .pagemain .container-wrap .container-item-wrap .info-wrap .name-wrap .level-wrap .level-star .level-yellow {
+                position: absolute;
+                top: 0;
+                left: 0; }
+              .pagemain .container-wrap .container-item-wrap .info-wrap .name-wrap .level-wrap .level-star .level-click {
+                width: 260rpx;
+                height: 36rpx;
+                position: absolute;
+                top: 0rpx;
+                left: 0rpx; }
+                .pagemain .container-wrap .container-item-wrap .info-wrap .name-wrap .level-wrap .level-star .level-click .star-opcity {
+                  width: 52rpx;
+                  height: 36rpx; }
+            .pagemain .container-wrap .container-item-wrap .info-wrap .name-wrap .level-wrap .level-name {
+              font-size: 26rpx;
+              color: #707777;
+              font-weight: 600; }
+      .pagemain .container-wrap .container-item-wrap .text-wrap {
+        margin-left: 40rpx;
+        padding-top: 28rpx;
+        margin-right: 30rpx;
+        margin-bottom: 2rpx; }
+        .pagemain .container-wrap .container-item-wrap .text-wrap .comment-text {
+          min-height: 180rpx;
+          font-size: 30rpx; }
+      .pagemain .container-wrap .container-item-wrap .img-wrap {
+        margin-left: 40rpx; }
+        .pagemain .container-wrap .container-item-wrap .img-wrap .img-list .add-btn-wrap {
+          margin-right: 26rpx;
+          margin-top: 26rpx;
+          width: 162rpx;
+          height: 162rpx; }
+          .pagemain .container-wrap .container-item-wrap .img-wrap .img-list .add-btn-wrap .add-btn {
+            width: 162rpx;
+            height: 162rpx;
+            border-radius: 8rpx; }
+        .pagemain .container-wrap .container-item-wrap .img-wrap .img-list .image-wrap {
+          position: relative;
+          margin-right: 26rpx;
+          margin-top: 26rpx;
+          width: 162rpx;
+          height: 162rpx; }
+          .pagemain .container-wrap .container-item-wrap .img-wrap .img-list .image-wrap .img {
+            width: 162rpx;
+            height: 162rpx;
+            border-radius: 8rpx; }
+          .pagemain .container-wrap .container-item-wrap .img-wrap .img-list .image-wrap .cancel-icon {
+            position: absolute;
+            top: -10rpx;
+            right: -10rpx;
+            width: 40rpx;
+            height: 40rpx; }
+      .pagemain .container-wrap .container-item-wrap .anonymous-wrap {
+        margin-left: 40rpx;
+        margin-top: 30rpx;
+        padding-bottom: 30rpx; }
+        .pagemain .container-wrap .container-item-wrap .anonymous-wrap .anonymous-icon {
+          width: 36rpx;
+          height: 36rpx; }
+        .pagemain .container-wrap .container-item-wrap .anonymous-wrap .anonymous-name {
+          margin-left: 10rpx;
+          font-size: 28rpx;
+          color: #a0aaaa; }
+  .pagemain .btn-wrap {
+    box-shadow: 0px 0px 2px 3px rgba(127, 127, 127, 0.1);
+    background-color: #fff;
+    position: fixed;
+    bottom: 0rpx;
+    height: 100rpx;
+    width: 100%;
+    z-index: 100; }
+    .pagemain .btn-wrap .bottom-btn {
+      font-size: 30rpx;
+      color: #fff;
+      width: 280rpx;
+      background: -webkit-linear-gradient(left, #58cbdc 0%, #01d9d6 100%);
+      border-radius: 37rpx;
+      text-align: center;
+      line-height: 74rpx; }
